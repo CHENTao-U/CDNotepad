@@ -1,0 +1,632 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37F064B31E20D5BB00653D2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064B21E20D5BB00653D2E /* main.m */; };
+		37F064B61E20D5BB00653D2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064B51E20D5BB00653D2E /* AppDelegate.m */; };
+		37F064BE1E20D5BB00653D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F064BD1E20D5BB00653D2E /* Assets.xcassets */; };
+		37F064D11E20DD2000653D2E /* CDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064D01E20DD2000653D2E /* CDTabBarController.m */; };
+		37F064D41E20DDB100653D2E /* CDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064D31E20DDB100653D2E /* CDNavigationController.m */; };
+		37F064D71E20DE8300653D2E /* CDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064D61E20DE8300653D2E /* CDBaseViewController.m */; };
+		37F064DB1E20DEFF00653D2E /* CDTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064DA1E20DEFF00653D2E /* CDTabBarView.m */; };
+		37F064DE1E20DF7700653D2E /* CDBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064DD1E20DF7700653D2E /* CDBarItem.m */; };
+		37F064F91E20E00600653D2E /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064E11E20E00600653D2E /* MASCompositeConstraint.m */; };
+		37F064FA1E20E00600653D2E /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064E41E20E00600653D2E /* MASConstraint.m */; };
+		37F064FB1E20E00600653D2E /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064E61E20E00600653D2E /* MASConstraintMaker.m */; };
+		37F064FC1E20E00600653D2E /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064E81E20E00600653D2E /* MASLayoutConstraint.m */; };
+		37F064FD1E20E00600653D2E /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064EC1E20E00600653D2E /* MASViewAttribute.m */; };
+		37F064FE1E20E00600653D2E /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064EE1E20E00600653D2E /* MASViewConstraint.m */; };
+		37F064FF1E20E00600653D2E /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064F01E20E00600653D2E /* NSArray+MASAdditions.m */; };
+		37F065001E20E00600653D2E /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064F31E20E00600653D2E /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		37F065011E20E00600653D2E /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064F51E20E00600653D2E /* View+MASAdditions.m */; };
+		37F065021E20E00600653D2E /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064F81E20E00600653D2E /* ViewController+MASAdditions.m */; };
+		37F065091E20E57A00653D2E /* tab_bar_bottom_item_icon_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065051E20E57A00653D2E /* tab_bar_bottom_item_icon_home@2x.png */; };
+		37F0650A1E20E57A00653D2E /* tab_bar_bottom_item_icon_home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065061E20E57A00653D2E /* tab_bar_bottom_item_icon_home@3x.png */; };
+		37F0650B1E20E57A00653D2E /* tab_bar_bottom_item_icon_mine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065071E20E57A00653D2E /* tab_bar_bottom_item_icon_mine@2x.png */; };
+		37F0650C1E20E57A00653D2E /* tab_bar_bottom_item_icon_mine@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065081E20E57A00653D2E /* tab_bar_bottom_item_icon_mine@3x.png */; };
+		37F065111E20E67B00653D2E /* tab_bar_bottom_item_icon_home_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F0650D1E20E67B00653D2E /* tab_bar_bottom_item_icon_home_0@2x.png */; };
+		37F065121E20E67B00653D2E /* tab_bar_bottom_item_icon_home_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F0650E1E20E67B00653D2E /* tab_bar_bottom_item_icon_home_0@3x.png */; };
+		37F065131E20E67B00653D2E /* tab_bar_bottom_item_icon_mine_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F0650F1E20E67B00653D2E /* tab_bar_bottom_item_icon_mine_0@2x.png */; };
+		37F065141E20E67B00653D2E /* tab_bar_bottom_item_icon_mine_0@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065101E20E67B00653D2E /* tab_bar_bottom_item_icon_mine_0@3x.png */; };
+		37F065191E20E74400653D2E /* CDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F065181E20E74400653D2E /* CDHomeViewController.m */; };
+		37F0651C1E20E76700653D2E /* CDMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F0651B1E20E76700653D2E /* CDMineViewController.m */; };
+		37F0651E1E20E8BF00653D2E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F0651D1E20E8BF00653D2E /* Launch Screen.storyboard */; };
+		37F065351E20E95800653D2E /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065201E20E95800653D2E /* Icon-60.png */; };
+		37F065361E20E95800653D2E /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065211E20E95800653D2E /* Icon-60@2x.png */; };
+		37F065371E20E95800653D2E /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065221E20E95800653D2E /* Icon-60@3x.png */; };
+		37F065381E20E95800653D2E /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065231E20E95800653D2E /* Icon-72.png */; };
+		37F065391E20E95800653D2E /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065241E20E95800653D2E /* Icon-72@2x.png */; };
+		37F0653A1E20E95800653D2E /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065251E20E95800653D2E /* Icon-76.png */; };
+		37F0653B1E20E95800653D2E /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065261E20E95800653D2E /* Icon-76@2x.png */; };
+		37F0653C1E20E95800653D2E /* Icon-76@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065271E20E95800653D2E /* Icon-76@3x.png */; };
+		37F0653D1E20E95800653D2E /* Icon-iPadPro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065281E20E95800653D2E /* Icon-iPadPro@2x.png */; };
+		37F0653E1E20E95800653D2E /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065291E20E95800653D2E /* Icon-Small-50.png */; };
+		37F0653F1E20E95800653D2E /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F0652A1E20E95800653D2E /* Icon-Small-50@2x.png */; };
+		37F065401E20E95800653D2E /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F0652B1E20E95800653D2E /* Icon-Small.png */; };
+		37F065411E20E95800653D2E /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F0652C1E20E95800653D2E /* Icon-Small@2x.png */; };
+		37F065421E20E95800653D2E /* Icon-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F0652D1E20E95800653D2E /* Icon-Small@3x.png */; };
+		37F065431E20E95800653D2E /* Icon-Spotlight-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F0652E1E20E95800653D2E /* Icon-Spotlight-40.png */; };
+		37F065441E20E95800653D2E /* Icon-Spotlight-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F0652F1E20E95800653D2E /* Icon-Spotlight-40@2x.png */; };
+		37F065451E20E95800653D2E /* Icon-Spotlight-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065301E20E95800653D2E /* Icon-Spotlight-40@3x.png */; };
+		37F065461E20E95800653D2E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065311E20E95800653D2E /* Icon.png */; };
+		37F065471E20E95800653D2E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065321E20E95800653D2E /* Icon@2x.png */; };
+		37F065481E20E95800653D2E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065331E20E95800653D2E /* iTunesArtwork.png */; };
+		37F065491E20E95800653D2E /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065341E20E95800653D2E /* iTunesArtwork@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		37F064AE1E20D5BB00653D2E /* CDNotepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDNotepad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F064B21E20D5BB00653D2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		37F064B41E20D5BB00653D2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		37F064B51E20D5BB00653D2E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		37F064BD1E20D5BB00653D2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		37F064C21E20D5BB00653D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37F064CF1E20DD2000653D2E /* CDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDTabBarController.h; sourceTree = "<group>"; };
+		37F064D01E20DD2000653D2E /* CDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTabBarController.m; sourceTree = "<group>"; };
+		37F064D21E20DDB100653D2E /* CDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNavigationController.h; sourceTree = "<group>"; };
+		37F064D31E20DDB100653D2E /* CDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNavigationController.m; sourceTree = "<group>"; };
+		37F064D51E20DE8300653D2E /* CDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseViewController.h; sourceTree = "<group>"; };
+		37F064D61E20DE8300653D2E /* CDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseViewController.m; sourceTree = "<group>"; };
+		37F064D91E20DEFF00653D2E /* CDTabBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDTabBarView.h; sourceTree = "<group>"; };
+		37F064DA1E20DEFF00653D2E /* CDTabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTabBarView.m; sourceTree = "<group>"; };
+		37F064DC1E20DF7700653D2E /* CDBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBarItem.h; sourceTree = "<group>"; };
+		37F064DD1E20DF7700653D2E /* CDBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBarItem.m; sourceTree = "<group>"; };
+		37F064E01E20E00600653D2E /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		37F064E11E20E00600653D2E /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		37F064E21E20E00600653D2E /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		37F064E31E20E00600653D2E /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		37F064E41E20E00600653D2E /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		37F064E51E20E00600653D2E /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		37F064E61E20E00600653D2E /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		37F064E71E20E00600653D2E /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		37F064E81E20E00600653D2E /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		37F064E91E20E00600653D2E /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		37F064EA1E20E00600653D2E /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		37F064EB1E20E00600653D2E /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		37F064EC1E20E00600653D2E /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		37F064ED1E20E00600653D2E /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		37F064EE1E20E00600653D2E /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		37F064EF1E20E00600653D2E /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		37F064F01E20E00600653D2E /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		37F064F11E20E00600653D2E /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		37F064F21E20E00600653D2E /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		37F064F31E20E00600653D2E /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		37F064F41E20E00600653D2E /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		37F064F51E20E00600653D2E /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		37F064F61E20E00600653D2E /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		37F064F71E20E00600653D2E /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		37F064F81E20E00600653D2E /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		37F065031E20E02B00653D2E /* NotepadPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotepadPrefixHeader.pch; sourceTree = "<group>"; };
+		37F065051E20E57A00653D2E /* tab_bar_bottom_item_icon_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_bottom_item_icon_home@2x.png"; sourceTree = "<group>"; };
+		37F065061E20E57A00653D2E /* tab_bar_bottom_item_icon_home@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_bottom_item_icon_home@3x.png"; sourceTree = "<group>"; };
+		37F065071E20E57A00653D2E /* tab_bar_bottom_item_icon_mine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_bottom_item_icon_mine@2x.png"; sourceTree = "<group>"; };
+		37F065081E20E57A00653D2E /* tab_bar_bottom_item_icon_mine@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_bottom_item_icon_mine@3x.png"; sourceTree = "<group>"; };
+		37F0650D1E20E67B00653D2E /* tab_bar_bottom_item_icon_home_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_bottom_item_icon_home_0@2x.png"; sourceTree = "<group>"; };
+		37F0650E1E20E67B00653D2E /* tab_bar_bottom_item_icon_home_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_bottom_item_icon_home_0@3x.png"; sourceTree = "<group>"; };
+		37F0650F1E20E67B00653D2E /* tab_bar_bottom_item_icon_mine_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_bottom_item_icon_mine_0@2x.png"; sourceTree = "<group>"; };
+		37F065101E20E67B00653D2E /* tab_bar_bottom_item_icon_mine_0@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_bottom_item_icon_mine_0@3x.png"; sourceTree = "<group>"; };
+		37F065171E20E74400653D2E /* CDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDHomeViewController.h; sourceTree = "<group>"; };
+		37F065181E20E74400653D2E /* CDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDHomeViewController.m; sourceTree = "<group>"; };
+		37F0651A1E20E76700653D2E /* CDMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMineViewController.h; sourceTree = "<group>"; };
+		37F0651B1E20E76700653D2E /* CDMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMineViewController.m; sourceTree = "<group>"; };
+		37F0651D1E20E8BF00653D2E /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		37F065201E20E95800653D2E /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
+		37F065211E20E95800653D2E /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		37F065221E20E95800653D2E /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
+		37F065231E20E95800653D2E /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		37F065241E20E95800653D2E /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		37F065251E20E95800653D2E /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
+		37F065261E20E95800653D2E /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
+		37F065271E20E95800653D2E /* Icon-76@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@3x.png"; sourceTree = "<group>"; };
+		37F065281E20E95800653D2E /* Icon-iPadPro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPadPro@2x.png"; sourceTree = "<group>"; };
+		37F065291E20E95800653D2E /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		37F0652A1E20E95800653D2E /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		37F0652B1E20E95800653D2E /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		37F0652C1E20E95800653D2E /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		37F0652D1E20E95800653D2E /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@3x.png"; sourceTree = "<group>"; };
+		37F0652E1E20E95800653D2E /* Icon-Spotlight-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40.png"; sourceTree = "<group>"; };
+		37F0652F1E20E95800653D2E /* Icon-Spotlight-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40@2x.png"; sourceTree = "<group>"; };
+		37F065301E20E95800653D2E /* Icon-Spotlight-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Spotlight-40@3x.png"; sourceTree = "<group>"; };
+		37F065311E20E95800653D2E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		37F065321E20E95800653D2E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		37F065331E20E95800653D2E /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		37F065341E20E95800653D2E /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37F064AB1E20D5BB00653D2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37F064A51E20D5BB00653D2E = {
+			isa = PBXGroup;
+			children = (
+				37F064B01E20D5BB00653D2E /* CDNotepad */,
+				37F064AF1E20D5BB00653D2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		37F064AF1E20D5BB00653D2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37F064AE1E20D5BB00653D2E /* CDNotepad.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37F064B01E20D5BB00653D2E /* CDNotepad */ = {
+			isa = PBXGroup;
+			children = (
+				37F064C81E20DC1900653D2E /* Classes */,
+				37F064B41E20D5BB00653D2E /* AppDelegate.h */,
+				37F064B51E20D5BB00653D2E /* AppDelegate.m */,
+				37F064B11E20D5BB00653D2E /* Supporting Files */,
+			);
+			path = CDNotepad;
+			sourceTree = "<group>";
+		};
+		37F064B11E20D5BB00653D2E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				37F065041E20E57A00653D2E /* ResouresAssets */,
+				37F064BD1E20D5BB00653D2E /* Assets.xcassets */,
+				37F064C21E20D5BB00653D2E /* Info.plist */,
+				37F064B21E20D5BB00653D2E /* main.m */,
+				37F065031E20E02B00653D2E /* NotepadPrefixHeader.pch */,
+				37F0651D1E20E8BF00653D2E /* Launch Screen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37F064C81E20DC1900653D2E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				37F064CD1E20DC1900653D2E /* UILayer */,
+				37F064CB1E20DC1900653D2E /* ModelLayer */,
+				37F064C91E20DC1900653D2E /* DataLayer */,
+				37F064CC1E20DC1900653D2E /* ToolsLayer */,
+				37F064CA1E20DC1900653D2E /* LibraryLayer */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		37F064C91E20DC1900653D2E /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		37F064CA1E20DC1900653D2E /* LibraryLayer */ = {
+			isa = PBXGroup;
+			children = (
+				37F064DF1E20E00600653D2E /* Masonry */,
+			);
+			path = LibraryLayer;
+			sourceTree = "<group>";
+		};
+		37F064CB1E20DC1900653D2E /* ModelLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelLayer;
+			sourceTree = "<group>";
+		};
+		37F064CC1E20DC1900653D2E /* ToolsLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ToolsLayer;
+			sourceTree = "<group>";
+		};
+		37F064CD1E20DC1900653D2E /* UILayer */ = {
+			isa = PBXGroup;
+			children = (
+				37F065151E20E72200653D2E /* HomePage */,
+				37F065161E20E72200653D2E /* PersonCenter */,
+				37F064CE1E20DCE600653D2E /* BaseTabBar */,
+			);
+			path = UILayer;
+			sourceTree = "<group>";
+		};
+		37F064CE1E20DCE600653D2E /* BaseTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				37F064CF1E20DD2000653D2E /* CDTabBarController.h */,
+				37F064D01E20DD2000653D2E /* CDTabBarController.m */,
+				37F064D21E20DDB100653D2E /* CDNavigationController.h */,
+				37F064D31E20DDB100653D2E /* CDNavigationController.m */,
+				37F064D51E20DE8300653D2E /* CDBaseViewController.h */,
+				37F064D61E20DE8300653D2E /* CDBaseViewController.m */,
+				37F064D81E20DEDA00653D2E /* Views */,
+			);
+			path = BaseTabBar;
+			sourceTree = "<group>";
+		};
+		37F064D81E20DEDA00653D2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37F064D91E20DEFF00653D2E /* CDTabBarView.h */,
+				37F064DA1E20DEFF00653D2E /* CDTabBarView.m */,
+				37F064DC1E20DF7700653D2E /* CDBarItem.h */,
+				37F064DD1E20DF7700653D2E /* CDBarItem.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		37F064DF1E20E00600653D2E /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				37F064E01E20E00600653D2E /* MASCompositeConstraint.h */,
+				37F064E11E20E00600653D2E /* MASCompositeConstraint.m */,
+				37F064E21E20E00600653D2E /* MASConstraint+Private.h */,
+				37F064E31E20E00600653D2E /* MASConstraint.h */,
+				37F064E41E20E00600653D2E /* MASConstraint.m */,
+				37F064E51E20E00600653D2E /* MASConstraintMaker.h */,
+				37F064E61E20E00600653D2E /* MASConstraintMaker.m */,
+				37F064E71E20E00600653D2E /* MASLayoutConstraint.h */,
+				37F064E81E20E00600653D2E /* MASLayoutConstraint.m */,
+				37F064E91E20E00600653D2E /* Masonry.h */,
+				37F064EA1E20E00600653D2E /* MASUtilities.h */,
+				37F064EB1E20E00600653D2E /* MASViewAttribute.h */,
+				37F064EC1E20E00600653D2E /* MASViewAttribute.m */,
+				37F064ED1E20E00600653D2E /* MASViewConstraint.h */,
+				37F064EE1E20E00600653D2E /* MASViewConstraint.m */,
+				37F064EF1E20E00600653D2E /* NSArray+MASAdditions.h */,
+				37F064F01E20E00600653D2E /* NSArray+MASAdditions.m */,
+				37F064F11E20E00600653D2E /* NSArray+MASShorthandAdditions.h */,
+				37F064F21E20E00600653D2E /* NSLayoutConstraint+MASDebugAdditions.h */,
+				37F064F31E20E00600653D2E /* NSLayoutConstraint+MASDebugAdditions.m */,
+				37F064F41E20E00600653D2E /* View+MASAdditions.h */,
+				37F064F51E20E00600653D2E /* View+MASAdditions.m */,
+				37F064F61E20E00600653D2E /* View+MASShorthandAdditions.h */,
+				37F064F71E20E00600653D2E /* ViewController+MASAdditions.h */,
+				37F064F81E20E00600653D2E /* ViewController+MASAdditions.m */,
+			);
+			name = Masonry;
+			path = Masonry/Masonry;
+			sourceTree = "<group>";
+		};
+		37F065041E20E57A00653D2E /* ResouresAssets */ = {
+			isa = PBXGroup;
+			children = (
+				37F0651F1E20E95800653D2E /* AppIcon */,
+				37F0650D1E20E67B00653D2E /* tab_bar_bottom_item_icon_home_0@2x.png */,
+				37F0650E1E20E67B00653D2E /* tab_bar_bottom_item_icon_home_0@3x.png */,
+				37F0650F1E20E67B00653D2E /* tab_bar_bottom_item_icon_mine_0@2x.png */,
+				37F065101E20E67B00653D2E /* tab_bar_bottom_item_icon_mine_0@3x.png */,
+				37F065051E20E57A00653D2E /* tab_bar_bottom_item_icon_home@2x.png */,
+				37F065061E20E57A00653D2E /* tab_bar_bottom_item_icon_home@3x.png */,
+				37F065071E20E57A00653D2E /* tab_bar_bottom_item_icon_mine@2x.png */,
+				37F065081E20E57A00653D2E /* tab_bar_bottom_item_icon_mine@3x.png */,
+			);
+			path = ResouresAssets;
+			sourceTree = "<group>";
+		};
+		37F065151E20E72200653D2E /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				37F065171E20E74400653D2E /* CDHomeViewController.h */,
+				37F065181E20E74400653D2E /* CDHomeViewController.m */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		37F065161E20E72200653D2E /* PersonCenter */ = {
+			isa = PBXGroup;
+			children = (
+				37F0651A1E20E76700653D2E /* CDMineViewController.h */,
+				37F0651B1E20E76700653D2E /* CDMineViewController.m */,
+			);
+			path = PersonCenter;
+			sourceTree = "<group>";
+		};
+		37F0651F1E20E95800653D2E /* AppIcon */ = {
+			isa = PBXGroup;
+			children = (
+				37F065201E20E95800653D2E /* Icon-60.png */,
+				37F065211E20E95800653D2E /* Icon-60@2x.png */,
+				37F065221E20E95800653D2E /* Icon-60@3x.png */,
+				37F065231E20E95800653D2E /* Icon-72.png */,
+				37F065241E20E95800653D2E /* Icon-72@2x.png */,
+				37F065251E20E95800653D2E /* Icon-76.png */,
+				37F065261E20E95800653D2E /* Icon-76@2x.png */,
+				37F065271E20E95800653D2E /* Icon-76@3x.png */,
+				37F065281E20E95800653D2E /* Icon-iPadPro@2x.png */,
+				37F065291E20E95800653D2E /* Icon-Small-50.png */,
+				37F0652A1E20E95800653D2E /* Icon-Small-50@2x.png */,
+				37F0652B1E20E95800653D2E /* Icon-Small.png */,
+				37F0652C1E20E95800653D2E /* Icon-Small@2x.png */,
+				37F0652D1E20E95800653D2E /* Icon-Small@3x.png */,
+				37F0652E1E20E95800653D2E /* Icon-Spotlight-40.png */,
+				37F0652F1E20E95800653D2E /* Icon-Spotlight-40@2x.png */,
+				37F065301E20E95800653D2E /* Icon-Spotlight-40@3x.png */,
+				37F065311E20E95800653D2E /* Icon.png */,
+				37F065321E20E95800653D2E /* Icon@2x.png */,
+				37F065331E20E95800653D2E /* iTunesArtwork.png */,
+				37F065341E20E95800653D2E /* iTunesArtwork@2x.png */,
+			);
+			path = AppIcon;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37F064AD1E20D5BB00653D2E /* CDNotepad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37F064C51E20D5BB00653D2E /* Build configuration list for PBXNativeTarget "CDNotepad" */;
+			buildPhases = (
+				37F064AA1E20D5BB00653D2E /* Sources */,
+				37F064AB1E20D5BB00653D2E /* Frameworks */,
+				37F064AC1E20D5BB00653D2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CDNotepad;
+			productName = CDNotepad;
+			productReference = 37F064AE1E20D5BB00653D2E /* CDNotepad.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37F064A61E20D5BB00653D2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Comtop;
+				TargetAttributes = {
+					37F064AD1E20D5BB00653D2E = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Q2292425WF;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 37F064A91E20D5BB00653D2E /* Build configuration list for PBXProject "CDNotepad" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 37F064A51E20D5BB00653D2E;
+			productRefGroup = 37F064AF1E20D5BB00653D2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37F064AD1E20D5BB00653D2E /* CDNotepad */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37F064AC1E20D5BB00653D2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F065141E20E67B00653D2E /* tab_bar_bottom_item_icon_mine_0@3x.png in Resources */,
+				37F065471E20E95800653D2E /* Icon@2x.png in Resources */,
+				37F065451E20E95800653D2E /* Icon-Spotlight-40@3x.png in Resources */,
+				37F0653A1E20E95800653D2E /* Icon-76.png in Resources */,
+				37F065091E20E57A00653D2E /* tab_bar_bottom_item_icon_home@2x.png in Resources */,
+				37F065391E20E95800653D2E /* Icon-72@2x.png in Resources */,
+				37F065441E20E95800653D2E /* Icon-Spotlight-40@2x.png in Resources */,
+				37F0650C1E20E57A00653D2E /* tab_bar_bottom_item_icon_mine@3x.png in Resources */,
+				37F0650A1E20E57A00653D2E /* tab_bar_bottom_item_icon_home@3x.png in Resources */,
+				37F065421E20E95800653D2E /* Icon-Small@3x.png in Resources */,
+				37F0653B1E20E95800653D2E /* Icon-76@2x.png in Resources */,
+				37F0653D1E20E95800653D2E /* Icon-iPadPro@2x.png in Resources */,
+				37F065351E20E95800653D2E /* Icon-60.png in Resources */,
+				37F065461E20E95800653D2E /* Icon.png in Resources */,
+				37F0653F1E20E95800653D2E /* Icon-Small-50@2x.png in Resources */,
+				37F065491E20E95800653D2E /* iTunesArtwork@2x.png in Resources */,
+				37F065381E20E95800653D2E /* Icon-72.png in Resources */,
+				37F065111E20E67B00653D2E /* tab_bar_bottom_item_icon_home_0@2x.png in Resources */,
+				37F065401E20E95800653D2E /* Icon-Small.png in Resources */,
+				37F065481E20E95800653D2E /* iTunesArtwork.png in Resources */,
+				37F065411E20E95800653D2E /* Icon-Small@2x.png in Resources */,
+				37F065121E20E67B00653D2E /* tab_bar_bottom_item_icon_home_0@3x.png in Resources */,
+				37F0653C1E20E95800653D2E /* Icon-76@3x.png in Resources */,
+				37F0650B1E20E57A00653D2E /* tab_bar_bottom_item_icon_mine@2x.png in Resources */,
+				37F064BE1E20D5BB00653D2E /* Assets.xcassets in Resources */,
+				37F065371E20E95800653D2E /* Icon-60@3x.png in Resources */,
+				37F065431E20E95800653D2E /* Icon-Spotlight-40.png in Resources */,
+				37F0651E1E20E8BF00653D2E /* Launch Screen.storyboard in Resources */,
+				37F0653E1E20E95800653D2E /* Icon-Small-50.png in Resources */,
+				37F065131E20E67B00653D2E /* tab_bar_bottom_item_icon_mine_0@2x.png in Resources */,
+				37F065361E20E95800653D2E /* Icon-60@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37F064AA1E20D5BB00653D2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F064FF1E20E00600653D2E /* NSArray+MASAdditions.m in Sources */,
+				37F064FE1E20E00600653D2E /* MASViewConstraint.m in Sources */,
+				37F064D11E20DD2000653D2E /* CDTabBarController.m in Sources */,
+				37F064FB1E20E00600653D2E /* MASConstraintMaker.m in Sources */,
+				37F065011E20E00600653D2E /* View+MASAdditions.m in Sources */,
+				37F064DB1E20DEFF00653D2E /* CDTabBarView.m in Sources */,
+				37F064FA1E20E00600653D2E /* MASConstraint.m in Sources */,
+				37F064D71E20DE8300653D2E /* CDBaseViewController.m in Sources */,
+				37F064FD1E20E00600653D2E /* MASViewAttribute.m in Sources */,
+				37F0651C1E20E76700653D2E /* CDMineViewController.m in Sources */,
+				37F065001E20E00600653D2E /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				37F064DE1E20DF7700653D2E /* CDBarItem.m in Sources */,
+				37F064F91E20E00600653D2E /* MASCompositeConstraint.m in Sources */,
+				37F064FC1E20E00600653D2E /* MASLayoutConstraint.m in Sources */,
+				37F064B61E20D5BB00653D2E /* AppDelegate.m in Sources */,
+				37F064D41E20DDB100653D2E /* CDNavigationController.m in Sources */,
+				37F065021E20E00600653D2E /* ViewController+MASAdditions.m in Sources */,
+				37F065191E20E74400653D2E /* CDHomeViewController.m in Sources */,
+				37F064B31E20D5BB00653D2E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		37F064C31E20D5BB00653D2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		37F064C41E20D5BB00653D2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		37F064C61E20D5BB00653D2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = Q2292425WF;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CDNotepad/NotepadPrefixHeader.pch";
+				INFOPLIST_FILE = CDNotepad/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = shenzhen.comtop.com.CDNotepad;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		37F064C71E20D5BB00653D2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = Q2292425WF;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CDNotepad/NotepadPrefixHeader.pch";
+				INFOPLIST_FILE = CDNotepad/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = shenzhen.comtop.com.CDNotepad;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37F064A91E20D5BB00653D2E /* Build configuration list for PBXProject "CDNotepad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37F064C31E20D5BB00653D2E /* Debug */,
+				37F064C41E20D5BB00653D2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37F064C51E20D5BB00653D2E /* Build configuration list for PBXNativeTarget "CDNotepad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37F064C61E20D5BB00653D2E /* Debug */,
+				37F064C71E20D5BB00653D2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 37F064A61E20D5BB00653D2E /* Project object */;
+}
