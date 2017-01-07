@@ -86,7 +86,7 @@
     if ([self viewControllers] == 0) {
         //首页
         CDHomeViewController *home = [[CDHomeViewController alloc] init];
-        home.title = @"首页";
+        home.title = @"记事本";
         CDNavigationController *oneNavi = [[CDNavigationController alloc] initWithRootViewController:home];
         oneNavi.delegate = self;
 //        [oneNavi setNavigationBarHidden:YES];

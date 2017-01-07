@@ -57,6 +57,7 @@
 		37F065471E20E95800653D2E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065321E20E95800653D2E /* Icon@2x.png */; };
 		37F065481E20E95800653D2E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065331E20E95800653D2E /* iTunesArtwork.png */; };
 		37F065491E20E95800653D2E /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065341E20E95800653D2E /* iTunesArtwork@2x.png */; };
+		37F0654B1E20F06300653D2E /* navigation_bg_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F0654A1E20F06300653D2E /* navigation_bg_color.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 		37F065321E20E95800653D2E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		37F065331E20E95800653D2E /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		37F065341E20E95800653D2E /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		37F0654A1E20F06300653D2E /* navigation_bg_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation_bg_color.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,7 @@
 		37F065041E20E57A00653D2E /* ResouresAssets */ = {
 			isa = PBXGroup;
 			children = (
+				37F0654A1E20F06300653D2E /* navigation_bg_color.png */,
 				37F0651F1E20E95800653D2E /* AppIcon */,
 				37F0650D1E20E67B00653D2E /* tab_bar_bottom_item_icon_home_0@2x.png */,
 				37F0650E1E20E67B00653D2E /* tab_bar_bottom_item_icon_home_0@3x.png */,
@@ -419,6 +422,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F0654B1E20F06300653D2E /* navigation_bg_color.png in Resources */,
 				37F065141E20E67B00653D2E /* tab_bar_bottom_item_icon_mine_0@3x.png in Resources */,
 				37F065471E20E95800653D2E /* Icon@2x.png in Resources */,
 				37F065451E20E95800653D2E /* Icon-Spotlight-40@3x.png in Resources */,

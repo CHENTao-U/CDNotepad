@@ -32,14 +32,14 @@ NSInteger const ItemsCount = 2;
 - (void)setup
 {
     //  背景 和 边框
-    self.backgroundColor = [UIColor whiteColor];
-    self.layer.shadowColor = LINE_BG.CGColor;
-    self.layer.shadowOffset = CGSizeMake(0.0,-1.0);
+    self.backgroundColor = DefineColorRGB(245.0, 245.0, 245.0, 1.0);
+    self.layer.shadowColor = DefineColorRGB(190.0, 190.0, 190.0, 1.0).CGColor;
+    self.layer.shadowOffset = CGSizeMake(0.0,-0.5);
     self.layer.shadowOpacity = 0.6;
-    self.layer.shadowRadius = 1.0;
+    self.layer.shadowRadius = 0.5;
     
     //  item 填充
-    NSArray * textArr =@[@"首页",@"我的"];
+    NSArray * textArr =@[@"记事本",@"我的"];
     NSArray * imgSelected = @[@"tab_bar_bottom_item_icon_home",@"tab_bar_bottom_item_icon_mine"];
     NSArray * imgDeselected = @[@"tab_bar_bottom_item_icon_home_0",@"tab_bar_bottom_item_icon_mine_0"];
     for (NSInteger i = 0 ; i < ItemsCount ; i ++) {
