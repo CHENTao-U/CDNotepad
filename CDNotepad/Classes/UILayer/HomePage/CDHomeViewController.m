@@ -7,10 +7,12 @@
 //
 
 #import "CDHomeViewController.h"
+#import "CDFilterSelectView.h"
 
 @interface CDHomeViewController ()
 
 @property (nonatomic,strong) UIButton *buttonTitle;
+@property (nonatomic,strong) CDFilterSelectView *filterView;
 
 @end
 
@@ -81,6 +83,8 @@
         case 0:
         {
             // 点击切换列表筛选条件
+            self.filterView.hidden = self.filterView.tag;
+            self.filterView.tag = !(self.filterView.tag);
             
         }
             break;
@@ -141,6 +145,21 @@
         
     }
     return _buttonTitle;
+}
+
+- (CDFilterSelectView *)filterView
+{
+    if (_filterView == nil) {
+        _filterView = [[CDFilterSelectView alloc] initWithFilterDataList:@[@"全部",@"本周",@"本月",@"一个月前",@"标记收藏"]];
+        [self.view addSubview:_filterView];
+        [_filterView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view);
+            make.centerX.equalTo(self.view);
+            make.height.equalTo(@160);
+            make.width.equalTo(@120);
+        }];
+    }
+    return _filterView;
 }
 
 

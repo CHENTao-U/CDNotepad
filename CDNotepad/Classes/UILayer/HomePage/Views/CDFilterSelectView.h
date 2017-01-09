@@ -10,4 +10,6 @@
 
 @interface CDFilterSelectView : UIView
 
+- (instancetype)initWithFilterDataList:(NSArray *)array;
+
 @end

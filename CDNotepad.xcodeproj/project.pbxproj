@@ -14,6 +14,8 @@
 		3713A64B1E23493600E88A3F /* home_navigation_row_down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3713A6451E23493600E88A3F /* home_navigation_row_down@3x.png */; };
 		3713A64C1E23493600E88A3F /* home_navigation_search_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3713A6461E23493600E88A3F /* home_navigation_search_icon@2x.png */; };
 		3713A64D1E23493600E88A3F /* home_navigation_search_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3713A6471E23493600E88A3F /* home_navigation_search_icon@3x.png */; };
+		3713A64F1E2366E000E88A3F /* home_filter_view_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3713A64E1E2366E000E88A3F /* home_filter_view_bg.png */; };
+		3713A6521E236E0A00E88A3F /* CDBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3713A6511E236E0A00E88A3F /* CDBaseTableViewCell.m */; };
 		37F064B31E20D5BB00653D2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064B21E20D5BB00653D2E /* main.m */; };
 		37F064B61E20D5BB00653D2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064B51E20D5BB00653D2E /* AppDelegate.m */; };
 		37F064BE1E20D5BB00653D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F064BD1E20D5BB00653D2E /* Assets.xcassets */; };
@@ -80,6 +82,9 @@
 		3713A6451E23493600E88A3F /* home_navigation_row_down@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_navigation_row_down@3x.png"; sourceTree = "<group>"; };
 		3713A6461E23493600E88A3F /* home_navigation_search_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_navigation_search_icon@2x.png"; sourceTree = "<group>"; };
 		3713A6471E23493600E88A3F /* home_navigation_search_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_navigation_search_icon@3x.png"; sourceTree = "<group>"; };
+		3713A64E1E2366E000E88A3F /* home_filter_view_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_filter_view_bg.png; sourceTree = "<group>"; };
+		3713A6501E236E0A00E88A3F /* CDBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseTableViewCell.h; sourceTree = "<group>"; };
+		3713A6511E236E0A00E88A3F /* CDBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseTableViewCell.m; sourceTree = "<group>"; };
 		37F064AE1E20D5BB00653D2E /* CDNotepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDNotepad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F064B21E20D5BB00653D2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37F064B41E20D5BB00653D2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -289,6 +294,8 @@
 				37F064D31E20DDB100653D2E /* CDNavigationController.m */,
 				37F064D51E20DE8300653D2E /* CDBaseViewController.h */,
 				37F064D61E20DE8300653D2E /* CDBaseViewController.m */,
+				3713A6501E236E0A00E88A3F /* CDBaseTableViewCell.h */,
+				3713A6511E236E0A00E88A3F /* CDBaseTableViewCell.m */,
 				37F064D81E20DEDA00653D2E /* Views */,
 			);
 			path = BaseTabBar;
@@ -350,6 +357,7 @@
 				37F0654F1E20F55B00653D2E /* home_navigation_left_calendar_icon@2x.png */,
 				37F065501E20F55B00653D2E /* home_navigation_left_calendar_icon@3x.png */,
 				37F0654A1E20F06300653D2E /* navigation_bg_color.png */,
+				3713A64E1E2366E000E88A3F /* home_filter_view_bg.png */,
 				37F0651F1E20E95800653D2E /* AppIcon */,
 				37F0650D1E20E67B00653D2E /* tab_bar_bottom_item_icon_home_0@2x.png */,
 				37F0650E1E20E67B00653D2E /* tab_bar_bottom_item_icon_home_0@3x.png */,
@@ -485,6 +493,7 @@
 				37F0653B1E20E95800653D2E /* Icon-76@2x.png in Resources */,
 				37F0653D1E20E95800653D2E /* Icon-iPadPro@2x.png in Resources */,
 				3713A64C1E23493600E88A3F /* home_navigation_search_icon@2x.png in Resources */,
+				3713A64F1E2366E000E88A3F /* home_filter_view_bg.png in Resources */,
 				37F065351E20E95800653D2E /* Icon-60.png in Resources */,
 				3713A64D1E23493600E88A3F /* home_navigation_search_icon@3x.png in Resources */,
 				37F065461E20E95800653D2E /* Icon.png in Resources */,
@@ -539,6 +548,7 @@
 				37F064D41E20DDB100653D2E /* CDNavigationController.m in Sources */,
 				37F065021E20E00600653D2E /* ViewController+MASAdditions.m in Sources */,
 				3713A6411E233FF300E88A3F /* CDFilterSelectView.m in Sources */,
+				3713A6521E236E0A00E88A3F /* CDBaseTableViewCell.m in Sources */,
 				37F065191E20E74400653D2E /* CDHomeViewController.m in Sources */,
 				37F064B31E20D5BB00653D2E /* main.m in Sources */,
 			);

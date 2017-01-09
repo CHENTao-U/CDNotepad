@@ -73,6 +73,7 @@
 #import "CDTabBarController.h"
 #import "CDNavigationController.h"
 #import "CDBaseViewController.h"
+#import "CDBaseTableViewCell.h"
 
 #import "Masonry.h"
 #import "UIView+Frame.h"
