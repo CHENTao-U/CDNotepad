@@ -41,6 +41,7 @@
  *  底部导航的高度
  */
 #define CDTabBarBottomViewHeight  49.0f
+#define CDScreenMarginAtLeftAndRight  15.0
 
 
 /**

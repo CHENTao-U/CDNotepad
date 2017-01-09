@@ -8,11 +8,14 @@
 
 #import "CDHomeViewController.h"
 #import "CDFilterSelectView.h"
+#import "CDNoteItemCell.h"
 
-@interface CDHomeViewController ()
+@interface CDHomeViewController () <UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UIButton *buttonTitle;
 @property (nonatomic,strong) CDFilterSelectView *filterView;
+
+@property (nonatomic,strong) UITableView *tableViewNotes;
 
 @end
 
@@ -25,6 +28,11 @@
     
     [self initButtonItem];
     [self initTitleView];
+    
+    
+    self.tableViewNotes.delegate = self;
+    self.tableViewNotes.dataSource = self;
+    
 }
 
 - (void)initTitleView
@@ -111,6 +119,61 @@
     }
 }
 
+#pragma mark - TableView Delegate
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CDNoteItemCell *cell = [[CDNoteItemCell alloc] initWithRestorationIdentifier:@"" onTableView:tableView selectionStyle:UITableViewCellSelectionStyleNone];
+//    cell.backgroundColor = [UIColor clearColor];
+//    
+//    cell.textLabel.text = [NSString stringWithFormat:@"记事本第 %zi 条",indexPath.row];
+//    cell.textLabel.textColor = COLOR_TITLE2;
+//    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return [[[CDNoteItemCell alloc] init] fitHeight];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 20;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 8.0; // cell之间的间距
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.01;
+}
+
+//加入左滑删除
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self setEditing:false animated:NO];
+}
+
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(8_0)
+{
+    // 添加一个删除按钮
+    UITableViewRowAction *deleteRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {        
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"确定要删除这条笔记吗？" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alertView show];
+    }];
+    return @[deleteRowAction];
+}
+
 #pragma mark - Getter Method
 - (UIButton *)buttonTitle
 {
@@ -162,5 +225,23 @@
     return _filterView;
 }
 
+
+- (UITableView *)tableViewNotes
+{
+    if (_tableViewNotes == nil) {
+        _tableViewNotes = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+        _tableViewNotes.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableViewNotes.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        [self.view addSubview:_tableViewNotes];
+        [_tableViewNotes mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view);
+            make.left.equalTo(self.view);
+            make.right.equalTo(self.view);
+            make.bottom.equalTo(self.view);
+        }];
+        
+    }
+    return _tableViewNotes;
+}
 
 @end

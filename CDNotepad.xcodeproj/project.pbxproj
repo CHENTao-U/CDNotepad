@@ -16,6 +16,7 @@
 		3713A64D1E23493600E88A3F /* home_navigation_search_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3713A6471E23493600E88A3F /* home_navigation_search_icon@3x.png */; };
 		3713A64F1E2366E000E88A3F /* home_filter_view_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3713A64E1E2366E000E88A3F /* home_filter_view_bg.png */; };
 		3713A6521E236E0A00E88A3F /* CDBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3713A6511E236E0A00E88A3F /* CDBaseTableViewCell.m */; };
+		3713A6561E2374BC00E88A3F /* CDNoteItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3713A6551E2374BC00E88A3F /* CDNoteItemCell.m */; };
 		37F064B31E20D5BB00653D2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064B21E20D5BB00653D2E /* main.m */; };
 		37F064B61E20D5BB00653D2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064B51E20D5BB00653D2E /* AppDelegate.m */; };
 		37F064BE1E20D5BB00653D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F064BD1E20D5BB00653D2E /* Assets.xcassets */; };
@@ -85,6 +86,8 @@
 		3713A64E1E2366E000E88A3F /* home_filter_view_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_filter_view_bg.png; sourceTree = "<group>"; };
 		3713A6501E236E0A00E88A3F /* CDBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBaseTableViewCell.h; sourceTree = "<group>"; };
 		3713A6511E236E0A00E88A3F /* CDBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBaseTableViewCell.m; sourceTree = "<group>"; };
+		3713A6541E2374BC00E88A3F /* CDNoteItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNoteItemCell.h; sourceTree = "<group>"; };
+		3713A6551E2374BC00E88A3F /* CDNoteItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNoteItemCell.m; sourceTree = "<group>"; };
 		37F064AE1E20D5BB00653D2E /* CDNotepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDNotepad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F064B21E20D5BB00653D2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37F064B41E20D5BB00653D2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -188,6 +191,15 @@
 				3713A6401E233FF300E88A3F /* CDFilterSelectView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3713A6531E23745E00E88A3F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3713A6541E2374BC00E88A3F /* CDNoteItemCell.h */,
+				3713A6551E2374BC00E88A3F /* CDNoteItemCell.m */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		37F064A51E20D5BB00653D2E = {
@@ -374,6 +386,7 @@
 		37F065151E20E72200653D2E /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				3713A6531E23745E00E88A3F /* Cells */,
 				3713A63E1E233FBC00E88A3F /* Views */,
 				37F065171E20E74400653D2E /* CDHomeViewController.h */,
 				37F065181E20E74400653D2E /* CDHomeViewController.m */,
@@ -535,6 +548,7 @@
 				37F065011E20E00600653D2E /* View+MASAdditions.m in Sources */,
 				37FFFA491E232905006E35DD /* CDButton.m in Sources */,
 				37F064DB1E20DEFF00653D2E /* CDTabBarView.m in Sources */,
+				3713A6561E2374BC00E88A3F /* CDNoteItemCell.m in Sources */,
 				37F064FA1E20E00600653D2E /* MASConstraint.m in Sources */,
 				37F064D71E20DE8300653D2E /* CDBaseViewController.m in Sources */,
 				37F0654E1E20F50400653D2E /* UIView+Frame.m in Sources */,
