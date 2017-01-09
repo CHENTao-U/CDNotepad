@@ -7,10 +7,14 @@
 //
 
 #import "CDBaseTableViewCell.h"
+#import "CDNoteModel.h"
 
 @interface CDNoteItemCell : CDBaseTableViewCell
 
+@property (nonatomic,strong) CDNoteModel *noteModel;
 
-- (CGFloat)fitHeight;
+
+
+- (CGFloat)fitHeightByNote:(CDNoteModel *)noteModel;
 
 @end

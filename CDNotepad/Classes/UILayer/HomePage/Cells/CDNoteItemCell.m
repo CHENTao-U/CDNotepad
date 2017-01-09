@@ -24,20 +24,49 @@
 
 - (void)setup
 {
-//    self.labelTitle.text = @"我是测试用的title数据哦。";
-    self.labelTitle.text = @"我是测试用的title数据哦，我再重复一次，我是测试用的title数据哦";
-    self.labelVoiceNumber.text = @"(包含2条语音信息)";
-    self.labelDateTime.text = @"2017年1月8日 13:53";
+    
 }
 
 #pragma mark - Public Method
-- (CGFloat)fitHeight
+- (void)setNoteModel:(CDNoteModel *)noteModel
 {
-//    self.labelTitle.text = @"我是测试用的title数据哦。";
-    self.labelTitle.text = @"我是测试用的title数据哦，我再重复一次，我是测试用的title数据哦";
-    CGSize textSize = [self.labelTitle textRectForBounds:CGRectMake(0, 0, SCREEN_WIDTH - CDScreenMarginAtLeftAndRight*2 - 80.0, SCREEN_HEIGHT) limitedToNumberOfLines:2].size;
-    //    self.labelTitle.text = @"我是测试用的title数据哦，我再重复一次，我是测试用的title数据哦";
-    return textSize.height + 10 + 15.0 + 10.0 + 15.0;
+    self.labelTitle.text = noteModel.title;
+    
+    self.labelVoiceNumber.hidden = !(noteModel.voicePathList.count);
+    self.labelVoiceNumber.text = [NSString stringWithFormat:@"(包含%zi条语音信息)",noteModel.voicePathList.count];
+    
+    self.labelDateTime.text = [CDDateHelper date:noteModel.createDate toStringByFormat:@"yyyy年MM月dd日 hh:mm"];
+    
+    self.imageViewMark.hidden = !(noteModel.mark);
+    
+    if (noteModel.picturePathList.count > 0) {
+        self.imageViewItem.image = [UIImage imageNamed:@"test_picture"];
+        [_imageViewItem mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.contentView).offset(-CDScreenMarginAtLeftAndRight);
+            make.top.equalTo(self.contentView).offset(5.0);
+            make.bottom.equalTo(self.contentView).offset(-5.0);
+            make.width.equalTo(_imageViewItem.mas_height);
+        }];
+    } else {
+        self.imageViewItem.image = nil;
+        [self.imageViewItem mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.contentView).offset(-CDScreenMarginAtLeftAndRight);
+            make.top.equalTo(self.contentView);
+            make.bottom.equalTo(self.contentView);
+            make.width.equalTo(@1);
+        }];
+    }
+    
+}
+
+- (CGFloat)fitHeightByNote:(CDNoteModel *)noteModel
+{
+    self.labelTitle.text = noteModel.title;
+    CGFloat height = [self.labelTitle textRectForBounds:CGRectMake(0, 0, SCREEN_WIDTH - CDScreenMarginAtLeftAndRight*2 - 5.0 - 80.0, SCREEN_HEIGHT) limitedToNumberOfLines:2].size.height;
+    if (noteModel.voicePathList.count > 0) {
+        height = height + 15.0 ;
+    }
+    return height + 10.0 + 10.0 + 15.0;
 }
 
 #pragma mark - Getter Method
@@ -45,13 +74,13 @@
 {
     if (_imageViewItem == nil) {
         _imageViewItem = [[UIImageView alloc] init];
-        _imageViewItem.contentMode = UIViewContentModeScaleAspectFit;
+        _imageViewItem.contentMode = UIViewContentModeScaleAspectFill;
         [self.contentView addSubview:_imageViewItem];
         [_imageViewItem mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.contentView).offset(-CDScreenMarginAtLeftAndRight);
             make.top.equalTo(self.contentView).offset(CDScreenMarginAtLeftAndRight);
-            make.bottom.equalTo(self.contentView).offset(CDScreenMarginAtLeftAndRight);
-            make.width.equalTo(@80);
+            make.bottom.equalTo(self.contentView).offset(-CDScreenMarginAtLeftAndRight);
+            make.width.equalTo(_imageViewItem.mas_height);
         }];
     }
     return _imageViewItem;
@@ -68,7 +97,7 @@
         [_labelTitle mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView).offset(5.0);
             make.left.equalTo(self.contentView).offset(CDScreenMarginAtLeftAndRight);
-            make.right.equalTo(self.imageViewItem.mas_left);
+            make.right.equalTo(self.imageViewItem.mas_left).offset(-5.0);
 //            make.height.equalTo(@36.0);
         }];
     }
@@ -115,12 +144,14 @@
     if (_imageViewMark == nil) {
         _imageViewMark = [[UIImageView alloc] init];
         _imageViewMark.contentMode = UIViewContentModeScaleAspectFit;
+        _imageViewMark.image = [UIImage imageNamed:@"home_cell_mark_note_icon"];
+        
         [self.contentView addSubview:_imageViewMark];
         [_imageViewMark mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.imageViewItem.mas_left).offset(-5);
             make.centerY.equalTo(self.labelDateTime);
-            make.height.equalTo(@30);
-            make.width.equalTo(@30);
+            make.height.equalTo(@12);
+            make.width.equalTo(@12);
         }];
     }
     return _imageViewMark;

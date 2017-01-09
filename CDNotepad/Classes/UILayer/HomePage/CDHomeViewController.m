@@ -9,8 +9,11 @@
 #import "CDHomeViewController.h"
 #import "CDFilterSelectView.h"
 #import "CDNoteItemCell.h"
+#import "CDNoteModel.h"
 
 @interface CDHomeViewController () <UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic,strong) NSMutableArray *notesArray;
 
 @property (nonatomic,strong) UIButton *buttonTitle;
 @property (nonatomic,strong) CDFilterSelectView *filterView;
@@ -123,19 +126,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CDNoteItemCell *cell = [[CDNoteItemCell alloc] initWithRestorationIdentifier:@"" onTableView:tableView selectionStyle:UITableViewCellSelectionStyleNone];
-//    cell.backgroundColor = [UIColor clearColor];
-//    
-//    cell.textLabel.text = [NSString stringWithFormat:@"记事本第 %zi 条",indexPath.row];
-//    cell.textLabel.textColor = COLOR_TITLE2;
-//    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    
+    cell.noteModel = self.notesArray[indexPath.section];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    return [[[CDNoteItemCell alloc] init] fitHeight];
+    CDNoteModel *note = self.notesArray[indexPath.section];
+    return [[[CDNoteItemCell alloc] init] fitHeightByNote:note];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -145,17 +145,25 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 20;
+    return self.notesArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 8.0; // cell之间的间距
+    if (section == 0) {
+        return 8.0;
+    } else {
+        return 4.0; // cell之间的间距
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 0.01;
+    if (section + 1 == self.notesArray.count) {
+        return 8.0;
+    } else {
+        return 4.0;
+    }
 }
 
 //加入左滑删除
@@ -242,6 +250,27 @@
         
     }
     return _tableViewNotes;
+}
+
+- (NSMutableArray *)notesArray
+{
+    if (_notesArray == nil) {
+        _notesArray = [[NSMutableArray alloc] init];
+        for (NSInteger i = 0; i < 20; i ++) {
+            CDNoteModel *note = [[CDNoteModel alloc] init];
+            if (i % 2 == 0) {
+                note.title = @"我是测试用的title数据哦，我再重复一次，我是测试用的title数据哦.";
+            } else {
+                note.title = @"我是测试用的title数据哦ooo.";
+            }
+            note.createDate = [NSDate date];
+            note.mark = i%3;
+            note.voicePathList = i%3 ? @[] : @[@""];
+            note.picturePathList = i%5 ? @[] : @[@""];
+            [_notesArray addObject:note];
+        }
+    }
+    return _notesArray;
 }
 
 @end
