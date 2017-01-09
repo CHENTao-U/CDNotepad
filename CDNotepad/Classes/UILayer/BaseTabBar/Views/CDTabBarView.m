@@ -32,8 +32,8 @@ NSInteger const ItemsCount = 2;
 - (void)setup
 {
     //  背景 和 边框
-    self.backgroundColor = DefineColorRGB(245.0, 245.0, 245.0, 1.0);
-    self.layer.shadowColor = DefineColorRGB(190.0, 190.0, 190.0, 1.0).CGColor;
+    self.backgroundColor = TAB_BAR_BOTTOM_VIEW_BG_COLOR;
+    self.layer.shadowColor = VIEW_BOTTOM_SHADOW_COLOR.CGColor;
     self.layer.shadowOffset = CGSizeMake(0.0,-0.5);
     self.layer.shadowOpacity = 0.6;
     self.layer.shadowRadius = 0.5;

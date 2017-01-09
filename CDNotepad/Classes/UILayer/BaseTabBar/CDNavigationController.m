@@ -35,7 +35,7 @@
     /**
      *  为导航栏添加底部阴影
      */
-    [self navigationBar].layer.shadowColor = DefineColorRGB(190.0, 190.0, 190.0, 1.0).CGColor; //shadowColor阴影颜色
+    [self navigationBar].layer.shadowColor = VIEW_BOTTOM_SHADOW_COLOR.CGColor; //shadowColor阴影颜色
     [self navigationBar].layer.shadowOffset = CGSizeMake(0.0f , 1.0f); //shadowOffset阴影偏移x，y向(上/下)偏移(-/+)2
     [self navigationBar].layer.shadowOpacity = 0.6f;//阴影透明度，默认0
     [self navigationBar].layer.shadowRadius = 1.0f;//阴影半径

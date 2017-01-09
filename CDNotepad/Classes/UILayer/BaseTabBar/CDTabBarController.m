@@ -76,7 +76,7 @@
         make.left.equalTo(self.view);
         make.right.equalTo(self.view);
         make.bottom.equalTo(self.view);
-        make.height.equalTo(@(MGTabBarBottomViewHeight));
+        make.height.equalTo(@(CDTabBarBottomViewHeight));
     }];
 }
 
@@ -126,7 +126,7 @@
     //    }
     
     [self.bottomTabBarView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.view).offset(MGTabBarBottomViewHeight);
+        make.bottom.equalTo(self.view).offset(CDTabBarBottomViewHeight);
     }];
     [UIView animateWithDuration:0.25 animations:^{
         [self.view layoutIfNeeded];

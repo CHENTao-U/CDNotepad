@@ -19,7 +19,7 @@
 @end
 
 
-#define ItemImageViewHeight  (MGTabBarBottomViewHeight/1.9)
+#define ItemImageViewHeight  (CDTabBarBottomViewHeight/1.9)
 @implementation CDBarItem
 #pragma mark - init
 - (instancetype)init
@@ -76,7 +76,7 @@
 {
     if ( YES == selected) {
         self.itemImageView.image = [UIImage imageNamed:_selectItemImageString] ;
-        self.itemLabelText.textColor = DefineColorRGB(246.0, 101.0, 22.0, 1.0);
+        self.itemLabelText.textColor = TAB_BAR_BOTTOM_ITEM_TITLE_COLOR;
     } else {
         self.itemImageView.image = [UIImage imageNamed:_deselectItemImageString] ;
         self.itemLabelText.textColor = [UIColor grayColor];
