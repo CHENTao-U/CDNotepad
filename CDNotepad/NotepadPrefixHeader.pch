@@ -81,6 +81,7 @@
 #import "JSONKit.h"
 #import "UIView+Frame.h"
 #import "CDDateHelper.h"
+#import "CDKeyboardManager.h"
 #import "CDCollectionViewFlowLayout.h"
 
 

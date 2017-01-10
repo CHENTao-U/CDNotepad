@@ -12,6 +12,7 @@
 
 @interface CDAddOrEditNoteViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
+@property (nonatomic,strong) UIView *viewTitle;
 @property (nonatomic,strong) UICollectionView *collectionViewAdd;
 @property (nonatomic,strong) CDAddAttachmentMenuView *menuView;
 
@@ -24,7 +25,7 @@
     // Do any additional setup after loading the view.
     
     // 设置title
-    [self setTitleViewBy:[NSDate date]];
+    [self updateTitleViewByNewDate:[NSDate date]];
     
     /***** 右侧按钮 *****/
     UIButton *leftButton = [[UIButton alloc] init];
@@ -44,46 +45,26 @@
     
 }
 
-- (void)setTitleViewBy:(NSDate *)date
+- (void)updateTitleViewByNewDate:(NSDate *)date
 {
-    UIView *viewTitle = [[UIView alloc] init];
     // 设置时间title
-    UILabel *title1 = [[UILabel alloc] init];
+    UILabel *title1 = [self.viewTitle viewWithTag:1];
     title1.text = [CDDateHelper date:date toStringByFormat:@"yyyy年MM月dd日"];
-    title1.textAlignment = NSTextAlignmentCenter;
-    title1.font = UIFONT_BOLD_16;
-    title1.textColor = NavigationBarTitleColor;
-    [viewTitle addSubview:title1];
-    [title1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(viewTitle);
-        make.right.equalTo(viewTitle);
-        make.top.equalTo(viewTitle).offset(10.0);
-        make.bottom.equalTo(viewTitle.mas_centerY);
-    }];
+    UILabel *title2 = [self.viewTitle viewWithTag:2];
+    title2.text = [CDDateHelper date:date toStringByFormat:@"HH:mm"];
     
-    
-    UILabel *title2 = [[UILabel alloc] init];
-    title2.text = [CDDateHelper date:date toStringByFormat:@"hh:mm"];
-    title2.textAlignment = NSTextAlignmentCenter;
-    title2.font = UIFONT_12;
-    title2.textColor = COLOR_TITLE1;
-    [viewTitle addSubview:title2];
-    [title2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(viewTitle);
-        make.right.equalTo(viewTitle);
-        make.top.equalTo(title1.mas_bottom);
-        make.bottom.equalTo(viewTitle);
-    }];
-    
-    viewTitle.cd_size = CGSizeMake(SCREEN_WIDTH - 160, 44.0);
-    self.navigationItem.titleView = viewTitle;
+    self.viewTitle.cd_size = CGSizeMake(SCREEN_WIDTH - 160, 44.0);
+    self.navigationItem.titleView = self.viewTitle;
 }
 
 
 #pragma mark - IBAction Method
 - (void)navigationButtonPressEvent:(UIButton *)button
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self showTipsViewText:@"添加成功" delayTime:1.0];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.navigationController popViewControllerAnimated:YES];
+    });
 }
 
 
@@ -206,6 +187,43 @@
 }
 
 #pragma mark - Getter Method
+- (UIView *)viewTitle
+{
+    if (_viewTitle == nil) {
+        _viewTitle = [[UIView alloc] init];
+        // 设置时间title
+        UILabel *title1 = [[UILabel alloc] init];
+//        title1.text = [CDDateHelper date:date toStringByFormat:@"yyyy年MM月dd日"];
+        title1.tag = 1;
+        title1.textAlignment = NSTextAlignmentCenter;
+        title1.font = UIFONT_BOLD_16;
+        title1.textColor = NavigationBarTitleColor;
+        [_viewTitle addSubview:title1];
+        [title1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(_viewTitle);
+            make.right.equalTo(_viewTitle);
+            make.top.equalTo(_viewTitle).offset(10.0);
+            make.bottom.equalTo(_viewTitle.mas_centerY);
+        }];
+        
+        
+        UILabel *title2 = [[UILabel alloc] init];
+//        title2.text = [CDDateHelper date:date toStringByFormat:@"hh:mm"];
+        title2.tag = 2;
+        title2.textAlignment = NSTextAlignmentCenter;
+        title2.font = UIFONT_12;
+        title2.textColor = COLOR_TITLE1;
+        [_viewTitle addSubview:title2];
+        [title2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(_viewTitle);
+            make.right.equalTo(_viewTitle);
+            make.top.equalTo(title1.mas_bottom);
+            make.bottom.equalTo(_viewTitle);
+        }];
+    }
+    return _viewTitle;
+}
+
 - (UICollectionView *)collectionViewAdd
 {
     if (_collectionViewAdd == nil) {

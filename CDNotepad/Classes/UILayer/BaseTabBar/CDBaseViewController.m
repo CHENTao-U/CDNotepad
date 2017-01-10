@@ -7,6 +7,7 @@
 //
 
 #import "CDBaseViewController.h"
+#import "CDTipsView.h"
 
 @interface CDBaseViewController ()
 
@@ -14,24 +15,31 @@
 
 @implementation CDBaseViewController
 
+#pragma mark
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark - Tips View
+- (void)showTipsViewText:(NSString *)text
+{
+    [[CDTipsView sharedTips] setTargetView:self.view];
+    [[CDTipsView sharedTips] tipString:text fontSize:14.0f];
+    [[CDTipsView sharedTips] setTipsPostion:[[CDKeyboardManager sharedKeyboard] keyboardVisible] ? CDTipsViewShowPostionTop : CDTipsViewShowPostionBottom];
+    [[CDTipsView sharedTips] show:YES];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)showTipsViewText:(NSString *)text delayTime:(CGFloat)time
+{
+    [self showTipsViewText:text];
+    [[CDTipsView sharedTips] hiden:YES delayTime:time];
 }
-*/
+
+- (void)hiddenTipsView
+{
+    [[CDTipsView sharedTips] hiden:YES];
+}
 
 @end

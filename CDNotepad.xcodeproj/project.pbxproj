@@ -87,6 +87,8 @@
 		37FD64411E248EBD00FE65E3 /* new_or_edit_menu_item_voice_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 37FD643E1E248EBD00FE65E3 /* new_or_edit_menu_item_voice_icon.png */; };
 		37FD64441E24B8FF00FE65E3 /* new_or_edit_navigation_item_finished_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37FD64421E24B8FF00FE65E3 /* new_or_edit_navigation_item_finished_icon@2x.png */; };
 		37FD64451E24B8FF00FE65E3 /* new_or_edit_navigation_item_finished_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37FD64431E24B8FF00FE65E3 /* new_or_edit_navigation_item_finished_icon@3x.png */; };
+		37FD64481E24BD0000FE65E3 /* CDTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FD64471E24BD0000FE65E3 /* CDTipsView.m */; };
+		37FD644B1E24BD9F00FE65E3 /* CDKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FD644A1E24BD9F00FE65E3 /* CDKeyboardManager.m */; };
 		37FFFA491E232905006E35DD /* CDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FFFA481E232905006E35DD /* CDButton.m */; };
 /* End PBXBuildFile section */
 
@@ -209,6 +211,10 @@
 		37FD643E1E248EBD00FE65E3 /* new_or_edit_menu_item_voice_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_or_edit_menu_item_voice_icon.png; sourceTree = "<group>"; };
 		37FD64421E24B8FF00FE65E3 /* new_or_edit_navigation_item_finished_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_or_edit_navigation_item_finished_icon@2x.png"; sourceTree = "<group>"; };
 		37FD64431E24B8FF00FE65E3 /* new_or_edit_navigation_item_finished_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new_or_edit_navigation_item_finished_icon@3x.png"; sourceTree = "<group>"; };
+		37FD64461E24BD0000FE65E3 /* CDTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDTipsView.h; sourceTree = "<group>"; };
+		37FD64471E24BD0000FE65E3 /* CDTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTipsView.m; sourceTree = "<group>"; };
+		37FD64491E24BD9F00FE65E3 /* CDKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDKeyboardManager.h; sourceTree = "<group>"; };
+		37FD644A1E24BD9F00FE65E3 /* CDKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDKeyboardManager.m; sourceTree = "<group>"; };
 		37FFFA471E232905006E35DD /* CDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDButton.h; sourceTree = "<group>"; };
 		37FFFA481E232905006E35DD /* CDButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -327,6 +333,10 @@
 		37F064CC1E20DC1900653D2E /* ToolsLayer */ = {
 			isa = PBXGroup;
 			children = (
+				37FD64491E24BD9F00FE65E3 /* CDKeyboardManager.h */,
+				37FD644A1E24BD9F00FE65E3 /* CDKeyboardManager.m */,
+				37FD64461E24BD0000FE65E3 /* CDTipsView.h */,
+				37FD64471E24BD0000FE65E3 /* CDTipsView.m */,
 				3713A6641E2390D300E88A3F /* JSONKit.h */,
 				3713A6651E2390D300E88A3F /* JSONKit.m */,
 				3713A65D1E238C4D00E88A3F /* CDDateHelper.h */,
@@ -622,8 +632,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				37F064FF1E20E00600653D2E /* NSArray+MASAdditions.m in Sources */,
+				37FD644B1E24BD9F00FE65E3 /* CDKeyboardManager.m in Sources */,
 				37F064FE1E20E00600653D2E /* MASViewConstraint.m in Sources */,
 				3713A65F1E238C4D00E88A3F /* CDDateHelper.m in Sources */,
+				37FD64481E24BD0000FE65E3 /* CDTipsView.m in Sources */,
 				37F064D11E20DD2000653D2E /* CDTabBarController.m in Sources */,
 				37F064FB1E20E00600653D2E /* MASConstraintMaker.m in Sources */,
 				37F065011E20E00600653D2E /* View+MASAdditions.m in Sources */,
