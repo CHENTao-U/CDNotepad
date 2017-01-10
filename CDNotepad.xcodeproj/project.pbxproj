@@ -24,6 +24,7 @@
 		3713A6631E238D3F00E88A3F /* home_cell_mark_note_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3713A6611E238D3F00E88A3F /* home_cell_mark_note_icon@3x.png */; };
 		3713A6661E2390D300E88A3F /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3713A6651E2390D300E88A3F /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3713A6681E23953200E88A3F /* test_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 3713A6671E23953200E88A3F /* test_picture.png */; };
+		3713A66B1E2399A600E88A3F /* CDAddOrEditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3713A66A1E2399A600E88A3F /* CDAddOrEditNoteViewController.m */; };
 		37F064B31E20D5BB00653D2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064B21E20D5BB00653D2E /* main.m */; };
 		37F064B61E20D5BB00653D2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064B51E20D5BB00653D2E /* AppDelegate.m */; };
 		37F064BE1E20D5BB00653D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F064BD1E20D5BB00653D2E /* Assets.xcassets */; };
@@ -78,6 +79,8 @@
 		37F0654E1E20F50400653D2E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F0654D1E20F50400653D2E /* UIView+Frame.m */; };
 		37F065511E20F55B00653D2E /* home_navigation_left_calendar_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F0654F1E20F55B00653D2E /* home_navigation_left_calendar_icon@2x.png */; };
 		37F065521E20F55B00653D2E /* home_navigation_left_calendar_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F065501E20F55B00653D2E /* home_navigation_left_calendar_icon@3x.png */; };
+		37FD64281E246DCC00FE65E3 /* CDCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FD64271E246DCC00FE65E3 /* CDCollectionViewFlowLayout.m */; };
+		37FD642B1E24799200FE65E3 /* CDInputCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FD642A1E24799200FE65E3 /* CDInputCollectionCell.m */; };
 		37FFFA491E232905006E35DD /* CDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FFFA481E232905006E35DD /* CDButton.m */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +109,8 @@
 		3713A6641E2390D300E88A3F /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		3713A6651E2390D300E88A3F /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		3713A6671E23953200E88A3F /* test_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_picture.png; sourceTree = "<group>"; };
+		3713A6691E2399A600E88A3F /* CDAddOrEditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAddOrEditNoteViewController.h; sourceTree = "<group>"; };
+		3713A66A1E2399A600E88A3F /* CDAddOrEditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAddOrEditNoteViewController.m; sourceTree = "<group>"; };
 		37F064AE1E20D5BB00653D2E /* CDNotepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDNotepad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F064B21E20D5BB00653D2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37F064B41E20D5BB00653D2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -187,6 +192,10 @@
 		37F0654D1E20F50400653D2E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		37F0654F1E20F55B00653D2E /* home_navigation_left_calendar_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_navigation_left_calendar_icon@2x.png"; sourceTree = "<group>"; };
 		37F065501E20F55B00653D2E /* home_navigation_left_calendar_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_navigation_left_calendar_icon@3x.png"; sourceTree = "<group>"; };
+		37FD64261E246DCC00FE65E3 /* CDCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		37FD64271E246DCC00FE65E3 /* CDCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		37FD64291E24799200FE65E3 /* CDInputCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDInputCollectionCell.h; sourceTree = "<group>"; };
+		37FD642A1E24799200FE65E3 /* CDInputCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDInputCollectionCell.m; sourceTree = "<group>"; };
 		37FFFA471E232905006E35DD /* CDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDButton.h; sourceTree = "<group>"; };
 		37FFFA481E232905006E35DD /* CDButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,6 +225,8 @@
 			children = (
 				3713A6541E2374BC00E88A3F /* CDNoteItemCell.h */,
 				3713A6551E2374BC00E88A3F /* CDNoteItemCell.m */,
+				37FD64291E24799200FE65E3 /* CDInputCollectionCell.h */,
+				37FD642A1E24799200FE65E3 /* CDInputCollectionCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -334,6 +345,8 @@
 				37F064D61E20DE8300653D2E /* CDBaseViewController.m */,
 				3713A6501E236E0A00E88A3F /* CDBaseTableViewCell.h */,
 				3713A6511E236E0A00E88A3F /* CDBaseTableViewCell.m */,
+				37FD64261E246DCC00FE65E3 /* CDCollectionViewFlowLayout.h */,
+				37FD64271E246DCC00FE65E3 /* CDCollectionViewFlowLayout.m */,
 				37F064D81E20DEDA00653D2E /* Views */,
 			);
 			path = BaseTabBar;
@@ -419,6 +432,8 @@
 				3713A63E1E233FBC00E88A3F /* Views */,
 				37F065171E20E74400653D2E /* CDHomeViewController.h */,
 				37F065181E20E74400653D2E /* CDHomeViewController.m */,
+				3713A6691E2399A600E88A3F /* CDAddOrEditNoteViewController.h */,
+				3713A66A1E2399A600E88A3F /* CDAddOrEditNoteViewController.m */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -588,6 +603,7 @@
 				37F064FD1E20E00600653D2E /* MASViewAttribute.m in Sources */,
 				3713A65C1E23887D00E88A3F /* CDNoteModel.m in Sources */,
 				37F0651C1E20E76700653D2E /* CDMineViewController.m in Sources */,
+				3713A66B1E2399A600E88A3F /* CDAddOrEditNoteViewController.m in Sources */,
 				37F065001E20E00600653D2E /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				37F064DE1E20DF7700653D2E /* CDBarItem.m in Sources */,
 				37F064F91E20E00600653D2E /* MASCompositeConstraint.m in Sources */,
@@ -595,6 +611,8 @@
 				37F064B61E20D5BB00653D2E /* AppDelegate.m in Sources */,
 				3713A6591E23885E00E88A3F /* CDBaseObject.m in Sources */,
 				37F064D41E20DDB100653D2E /* CDNavigationController.m in Sources */,
+				37FD64281E246DCC00FE65E3 /* CDCollectionViewFlowLayout.m in Sources */,
+				37FD642B1E24799200FE65E3 /* CDInputCollectionCell.m in Sources */,
 				37F065021E20E00600653D2E /* ViewController+MASAdditions.m in Sources */,
 				3713A6411E233FF300E88A3F /* CDFilterSelectView.m in Sources */,
 				3713A6521E236E0A00E88A3F /* CDBaseTableViewCell.m in Sources */,

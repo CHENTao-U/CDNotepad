@@ -98,7 +98,7 @@ typedef NS_ENUM(NSInteger,CDCalendarWeekdays) {
 /**
  *  按照指定的format格式转换一个字符串，返回转换后的日期
  *
- *  @param date   需要转换的日期
+ *  @param dateText   需要转换的日期
  *  @param format 转换格式 yyyy-MM-dd HH:mm:ss
  *
  *  @return 转换后的字符串

@@ -10,6 +10,7 @@
 #import "CDFilterSelectView.h"
 #import "CDNoteItemCell.h"
 #import "CDNoteModel.h"
+#import "CDAddOrEditNoteViewController.h"
 
 @interface CDHomeViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -114,7 +115,8 @@
         case 3:
         {
             // 点击添加新的记事本
-            
+            CDAddOrEditNoteViewController *addController = [[CDAddOrEditNoteViewController alloc] init];
+            [self.navigationController pushViewController:addController animated:YES];
         }
             break;
         default:

@@ -80,7 +80,7 @@
 #import "JSONKit.h"
 #import "UIView+Frame.h"
 #import "CDDateHelper.h"
-
+#import "CDCollectionViewFlowLayout.h"
 
 
 #endif /* NotepadPrefixHeader_pch */
