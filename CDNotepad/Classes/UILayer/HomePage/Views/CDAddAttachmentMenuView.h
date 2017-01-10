@@ -7,12 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class CDAddAttachmentMenuView;
 
 UIKIT_EXTERN const CGFloat AddAttachmentMenuHeight;
 
+
+@protocol CDAddAttachmentMenuViewDelegate <NSObject>
+
+- (void)menuView:(CDAddAttachmentMenuView *)menuView buttonSelectPictureClicked:(UIButton *)button;
+- (void)menuView:(CDAddAttachmentMenuView *)menuView buttonMakeVoiceClicked:(UIButton *)button;
+- (void)menuView:(CDAddAttachmentMenuView *)menuView selectedDate:(NSDate *)selectedDate;
+
+@end
+
 @interface CDAddAttachmentMenuView : UIView
 
+@property (nonatomic,weak) id <CDAddAttachmentMenuViewDelegate> delegate;
 
 - (void)setActionEvent:(SEL)action andTarget:(id)target;
 

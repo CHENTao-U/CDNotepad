@@ -66,9 +66,10 @@
 // 添加底部阴影
 #define VIEW_BOTTOM_SHADOW_COLOR  DefineColorRGB(190.0, 190.0, 190.0, 1.0)
 // 色系定义宏
+#define MainColor DefineColorHEX(0xff7e00) // 主色系 - 橙色
 #define NavigationBarTitleColor DefineColorRGB(50, 50, 50, 1.0)
-#define COLOR_TITLE1  [UIColor darkTextColor];
-#define COLOR_TITLE2  [UIColor darkGrayColor];
+#define COLOR_TITLE1  [UIColor darkTextColor]
+#define COLOR_TITLE2  [UIColor darkGrayColor]
 
 
 

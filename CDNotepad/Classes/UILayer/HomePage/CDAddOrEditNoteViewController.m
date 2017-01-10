@@ -27,7 +27,15 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     // 设置title
-    [self updateTitleViewByNewDate:[NSDate date]];
+//    [self updateTitleViewByNewDate:[NSDate date]];
+    UILabel *title1 = [self.viewTitle viewWithTag:1];
+    title1.text = [CDDateHelper date:[NSDate date] toStringByFormat:@"yyyy年MM月dd日"];
+    UILabel *title2 = [self.viewTitle viewWithTag:2];
+    title2.text = [CDDateHelper date:[NSDate date] toStringByFormat:@"HH:mm"];
+    
+    self.viewTitle.cd_size = CGSizeMake(SCREEN_WIDTH - 160, 44.0);
+    self.navigationItem.titleView = self.viewTitle;
+    
     
     /***** 右侧按钮 *****/
     UIButton *leftButton = [[UIButton alloc] init];
@@ -44,8 +52,6 @@
     self.collectionViewAdd.delegate = self;
     self.collectionViewAdd.dataSource = self;
     
-    // 设置底部菜单点击事件回调
-    [self.menuView setActionEvent:@selector(menuButtonClickedEvent:) andTarget:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -62,9 +68,6 @@
     title1.text = [CDDateHelper date:date toStringByFormat:@"yyyy年MM月dd日"];
     UILabel *title2 = [self.viewTitle viewWithTag:2];
     title2.text = [CDDateHelper date:date toStringByFormat:@"HH:mm"];
-    
-    self.viewTitle.cd_size = CGSizeMake(SCREEN_WIDTH - 160, 44.0);
-    self.navigationItem.titleView = self.viewTitle;
 }
 
 
@@ -77,27 +80,38 @@
     });
 }
 
-- (void)menuButtonClickedEvent:(UIButton *)button
+//- (void)menuButtonClickedEvent:(UIButton *)button
+//{
+//    switch (button.tag) {
+//        case 1:
+//        {
+//            NSLog(@"选择图片");
+//        }
+//            break;
+//        case 2:
+//        {
+//            NSLog(@"开始录音");
+//        }
+//            break;
+//        default:
+//            break;
+//    }
+//}
+
+#pragma mark - CDAddAttachmentMenuView Delegate
+- (void)menuView:(CDAddAttachmentMenuView *)menuView buttonSelectPictureClicked:(UIButton *)button
 {
-    switch (button.tag) {
-        case 1:
-        {
-            NSLog(@"选择图片");
-        }
-            break;
-        case 2:
-        {
-            NSLog(@"开始录音");
-        }
-            break;
-        case 3:
-        {
-            NSLog(@"选择日期");
-        }
-            break;
-        default:
-            break;
-    }
+    NSLog(@"选择图片");
+}
+
+- (void)menuView:(CDAddAttachmentMenuView *)menuView buttonMakeVoiceClicked:(UIButton *)button
+{
+    NSLog(@"开始录音");
+}
+
+- (void)menuView:(CDAddAttachmentMenuView *)menuView selectedDate:(NSDate *)selectedDate
+{
+    [self updateTitleViewByNewDate:selectedDate];
 }
 
 #pragma mark
@@ -326,6 +340,7 @@
 {
     if (_menuView == nil) {
         _menuView = [[CDAddAttachmentMenuView alloc] init];
+        _menuView.delegate = self;
         [self.view addSubview:_menuView];
         [_menuView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.view);

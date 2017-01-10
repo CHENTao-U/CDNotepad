@@ -7,17 +7,23 @@
 //
 
 #import "CDAddAttachmentMenuView.h"
+#import "CDCDPickerDateView.h"
 
 
 const CGFloat AddAttachmentMenuHeight = 45.0;
 
 
 @interface CDAddAttachmentMenuView ()
-
+{
+    CDCDPickerDateView *_picker;
+    NSString *_dateString;
+    NSString *_timeString;
+}
 @property (nonatomic,strong) UIView *viewMenu;
 @property (nonatomic,strong) UIButton *buttonSelectedPicture;
 @property (nonatomic,strong) UIButton *buttonMakeVoice;
 @property (nonatomic,strong) UIButton *buttonSelectedDate;
+@property (nonatomic,strong) UIButton *buttonSelectedTime;
 
 @end
 
@@ -35,34 +41,125 @@ const CGFloat AddAttachmentMenuHeight = 45.0;
 
 - (void)setup
 {
+    
+    _dateString = [CDDateHelper date:[NSDate date] toStringByFormat:@"yyyyMMdd"];
+    _timeString = [CDDateHelper date:[NSDate date] toStringByFormat:@"HHmm"];
+    
+    self.viewMenu.layer.borderColor = DefineColorRGB(190.0, 190.0, 190.0, 0.5).CGColor;
+    self.viewMenu.layer.borderWidth = 1.0;
+    
+    
     self.buttonSelectedPicture.backgroundColor = [UIColor whiteColor];
-    self.buttonSelectedPicture.layer.borderColor = DefineColorRGB(190.0, 190.0, 190.0, 0.5).CGColor;
-    self.buttonSelectedPicture.layer.borderWidth = 1.0;
+    self.buttonSelectedPicture.layer.borderColor = MainColor.CGColor;
+    self.buttonSelectedPicture.layer.borderWidth = 0.5;
     self.buttonSelectedPicture.layer.cornerRadius = 3.0f;
     
     self.buttonMakeVoice.backgroundColor = [UIColor whiteColor];
-    self.buttonMakeVoice.layer.borderColor = DefineColorRGB(190.0, 190.0, 190.0, 0.5).CGColor;
-    self.buttonMakeVoice.layer.borderWidth = 1.0;
+    self.buttonMakeVoice.layer.borderColor = MainColor.CGColor;
+    self.buttonMakeVoice.layer.borderWidth = 0.5;
     self.buttonMakeVoice.layer.cornerRadius = 3.0f;
     
     self.buttonSelectedDate.backgroundColor = [UIColor whiteColor];
-    self.buttonSelectedDate.layer.borderColor = DefineColorRGB(190.0, 190.0, 190.0, 0.5).CGColor;
-    self.buttonSelectedDate.layer.borderWidth = 1.0;
+    self.buttonSelectedDate.layer.borderColor = MainColor.CGColor;
+    self.buttonSelectedDate.layer.borderWidth = 0.5;
     self.buttonSelectedDate.layer.cornerRadius = 3.0f;
     
+    self.buttonSelectedTime.backgroundColor = [UIColor whiteColor];
+    self.buttonSelectedTime.layer.borderColor = MainColor.CGColor;
+    self.buttonSelectedTime.layer.borderWidth = 0.5;
+    self.buttonSelectedTime.layer.cornerRadius = 3.0f;
     
     
+    [self.buttonSelectedPicture addTarget:self action:@selector(menuButtonClickedEvent:) forControlEvents:UIControlEventTouchUpInside];
+    self.buttonSelectedPicture.tag = 1;
+    [self.buttonMakeVoice addTarget:self action:@selector(menuButtonClickedEvent:) forControlEvents:UIControlEventTouchUpInside];
+    self.buttonMakeVoice.tag = 2;
+    
+    
+    // 日期和时间
+    [self.buttonSelectedDate addTarget:self action:@selector(showPickerDateView:) forControlEvents:UIControlEventTouchUpInside];
+    self.buttonSelectedDate.tag = 1;
+    [self.buttonSelectedTime addTarget:self action:@selector(showPickerDateView:) forControlEvents:UIControlEventTouchUpInside];
+    self.buttonSelectedTime.tag = 2;
 }
 
 #pragma mark - Public Method
 - (void)setActionEvent:(SEL)action andTarget:(id)target
 {
-    [self.buttonSelectedPicture addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    self.buttonSelectedPicture.tag = 1;
-    [self.buttonMakeVoice addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    self.buttonMakeVoice.tag = 2;
-    [self.buttonSelectedDate addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    self.buttonSelectedDate.tag = 3;
+    
+}
+
+#pragma mark - IBAction
+- (void)menuButtonClickedEvent:(UIButton *)button
+{
+    switch (button.tag) {
+        case 1:
+        {
+            NSLog(@"选择图片");
+            if ([_delegate respondsToSelector:@selector(menuView:buttonSelectPictureClicked:)]) {
+                [_delegate menuView:self buttonSelectPictureClicked:button];
+            }
+        }
+            break;
+        case 2:
+        {
+            NSLog(@"开始录音");
+            if ([_delegate respondsToSelector:@selector(menuView:buttonMakeVoiceClicked:)]) {
+                [_delegate menuView:self buttonMakeVoiceClicked:button];
+            }
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)showPickerDateView:(UIButton *)button
+{
+    if (button.tag == 1) {
+        if (self.cd_height > AddAttachmentMenuHeight && _picker.showConentType == 0) {
+            return;
+        }
+        _picker = [[CDCDPickerDateView alloc] init];
+        _picker.showConentType = 0;
+        
+        
+    } else {
+        if (self.cd_height > AddAttachmentMenuHeight && _picker.showConentType == 1) {
+            return;
+        }
+        _picker = [[CDCDPickerDateView alloc] init];
+        _picker.showConentType = 1;
+    }
+    
+    [self mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(AddAttachmentMenuHeight +CDDatePickerViewHeight + 35.0));
+    }];
+    [self.viewMenu endEditing:YES];
+    
+    [_picker setButtonActionEvent:@selector(buttonOnPickerClickedEvent:) andTarget:self];
+    [_picker showPickerViewOnTargetView:self];
+}
+
+- (void)buttonOnPickerClickedEvent:(UIButton *)button
+{
+    [_picker hiddenPickerView];
+    [self mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(AddAttachmentMenuHeight));
+    }];
+    
+    if (button.tag == 1) {
+        if (_picker.showConentType) {
+            _timeString = [NSString stringWithFormat:@"%@%@",[_picker selectedDataInComponent:0],[_picker selectedDataInComponent:1]];
+        } else {
+            _dateString = [NSString stringWithFormat:@"%@%@%@",[_picker selectedDataInComponent:0],[_picker selectedDataInComponent:1],[_picker selectedDataInComponent:2]];
+        }
+        NSString *fullDateString = [NSString stringWithFormat:@"%@%@",_dateString,_timeString];
+        NSDate *newDate = [CDDateHelper dateFromString:fullDateString byFormat:@"yyyyMMddHHmm"];
+        if ([_delegate respondsToSelector:@selector(menuView:selectedDate:)]) {
+            [_delegate menuView:self selectedDate:newDate];
+        }
+    }
 }
 
 #pragma mark - Getter Method
@@ -91,7 +188,8 @@ const CGFloat AddAttachmentMenuHeight = 45.0;
         _buttonSelectedPicture = [[UIButton alloc] init];
         [self.viewMenu addSubview:_buttonSelectedPicture];
         [_buttonSelectedPicture mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.viewMenu).offset(CDScreenMarginAtLeftAndRight);
+//            make.left.equalTo(self.viewMenu).offset(CDScreenMarginAtLeftAndRight);
+            make.centerX.equalTo(self.viewMenu.mas_left).offset(SCREEN_WIDTH/4.0/2.0);
             make.top.equalTo(self.viewMenu).offset(8.0);
             make.bottom.equalTo(self.viewMenu).offset(-8.0);
             make.width.equalTo(@70);
@@ -102,7 +200,7 @@ const CGFloat AddAttachmentMenuHeight = 45.0;
         label.text = @"图片";
         label.textAlignment = NSTextAlignmentCenter;
         label.font = UIFONT_14;
-        label.textColor = COLOR_TITLE1;
+        label.textColor = MainColor;
         [_buttonSelectedPicture addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(_buttonSelectedPicture).offset(10.0);
@@ -134,7 +232,8 @@ const CGFloat AddAttachmentMenuHeight = 45.0;
         _buttonMakeVoice = [[UIButton alloc] init];
         [self.viewMenu addSubview:_buttonMakeVoice];
         [_buttonMakeVoice mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.buttonSelectedPicture.mas_right).offset(CDScreenMarginAtLeftAndRight*2);
+//            make.left.equalTo(self.buttonSelectedPicture.mas_right).offset(CDScreenMarginAtLeftAndRight);
+            make.centerX.equalTo(self.buttonSelectedPicture.mas_centerX).offset(SCREEN_WIDTH/4.0);
             make.top.equalTo(self.buttonSelectedPicture);
             make.bottom.equalTo(self.buttonSelectedPicture);
             make.width.equalTo(@70);
@@ -146,7 +245,7 @@ const CGFloat AddAttachmentMenuHeight = 45.0;
         label.text = @"录音";
         label.textAlignment = NSTextAlignmentCenter;
         label.font = UIFONT_14;
-        label.textColor = COLOR_TITLE1;
+        label.textColor = MainColor;
         [_buttonMakeVoice addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(_buttonMakeVoice).offset(10.0);
@@ -177,20 +276,20 @@ const CGFloat AddAttachmentMenuHeight = 45.0;
         _buttonSelectedDate = [[UIButton alloc] init];
         [self.viewMenu addSubview:_buttonSelectedDate];
         [_buttonSelectedDate mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(self.mas_right).offset(-CDScreenMarginAtLeftAndRight);
+//            make.right.equalTo(self.buttonSelectedTime.mas_left).offset(-CDScreenMarginAtLeftAndRight);
+            make.centerX.equalTo(self.buttonSelectedTime.mas_centerX).offset(-SCREEN_WIDTH/4.0);
             make.top.equalTo(self.buttonSelectedPicture);
             make.bottom.equalTo(self.buttonSelectedPicture);
-            make.width.equalTo(@130);
+            make.width.equalTo(@70);
         }];
         
         
         // title文本
         UILabel *label = [[UILabel alloc] init];
-        label.text = @"选择日期和时间";
+        label.text = @"日期";
         label.textAlignment = NSTextAlignmentCenter;
         label.font = UIFONT_14;
-        label.textColor = COLOR_TITLE1;
-        
+        label.textColor = MainColor;
         [_buttonSelectedDate addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(_buttonSelectedDate).offset(10.0);
@@ -214,6 +313,50 @@ const CGFloat AddAttachmentMenuHeight = 45.0;
         
     }
     return _buttonSelectedDate;
+}
+
+- (UIButton *)buttonSelectedTime
+{
+    if (_buttonSelectedTime == nil) {
+        _buttonSelectedTime = [[UIButton alloc] init];
+        [self.viewMenu addSubview:_buttonSelectedTime];
+        [_buttonSelectedTime mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.right.equalTo(self.mas_right).offset(-CDScreenMarginAtLeftAndRight);
+            make.centerX.equalTo(self.viewMenu.mas_right).offset(-SCREEN_WIDTH/4.0/2.0);
+            make.top.equalTo(self.buttonSelectedPicture);
+            make.bottom.equalTo(self.buttonSelectedPicture);
+            make.width.equalTo(@70);
+        }];
+        
+        
+        // title文本
+        UILabel *label = [[UILabel alloc] init];
+        label.text = @"时间";
+        label.textAlignment = NSTextAlignmentCenter;
+        label.font = UIFONT_14;
+        label.textColor = MainColor;
+        [_buttonSelectedTime addSubview:label];
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(_buttonSelectedTime).offset(10.0);
+            make.top.equalTo(_buttonSelectedTime);
+            make.bottom.equalTo(_buttonSelectedTime);
+            make.width.equalTo(@([label textRectForBounds:CGRectMake(0, 0, 100.0, SCREEN_HEIGHT) limitedToNumberOfLines:1].size.width + 5.0));
+        }];
+        
+        // icon图标
+        UIImageView *imageView = [[UIImageView alloc] init];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        imageView.image = [UIImage imageNamed:@"new_or_edit_menu_item_calendar_icon"];
+        [_buttonSelectedTime addSubview:imageView];
+        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(label.mas_left);
+            make.centerY.equalTo(label.mas_centerY);
+            make.height.equalTo(@20.0);
+            make.width.equalTo(@20.0);
+        }];
+        
+    }
+    return _buttonSelectedTime;
 }
 
 @end
