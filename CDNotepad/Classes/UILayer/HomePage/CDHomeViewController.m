@@ -193,8 +193,8 @@
         UILabel *label = [[UILabel alloc] init];
         label.tag = 100;
         label.textAlignment = NSTextAlignmentCenter;
-        label.font = UIFONT_14;
-        label.textColor = COLOR_TITLE1;
+        label.font = UIFONT_BOLD_16;
+        label.textColor = NavigationBarTitleColor;
         [_buttonTitle addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(_buttonTitle);

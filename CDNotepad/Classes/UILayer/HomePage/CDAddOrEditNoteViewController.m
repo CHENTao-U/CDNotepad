@@ -8,10 +8,12 @@
 
 #import "CDAddOrEditNoteViewController.h"
 #import "CDInputCollectionCell.h"
+#import "CDAddAttachmentMenuView.h"
 
 @interface CDAddOrEditNoteViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) UICollectionView *collectionViewAdd;
+@property (nonatomic,strong) CDAddAttachmentMenuView *menuView;
 
 @end
 
@@ -21,9 +23,67 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // 设置title
+    [self setTitleViewBy:[NSDate date]];
+    
+    /***** 右侧按钮 *****/
+    UIButton *leftButton = [[UIButton alloc] init];
+    leftButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [leftButton setImage:[UIImage imageNamed:@"new_or_edit_navigation_item_finished_icon"] forState:UIControlStateNormal];
+    [leftButton setTintColor:[UIColor whiteColor]];
+    leftButton.cd_size = CGSizeMake(30.0, 20.0);
+    leftButton.tag = 3;
+    // 监听按钮点击
+    [leftButton addTarget:self action:@selector(navigationButtonPressEvent:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
+    
+    // 设置代理对象
     self.collectionViewAdd.delegate = self;
     self.collectionViewAdd.dataSource = self;
     
+    
+}
+
+- (void)setTitleViewBy:(NSDate *)date
+{
+    UIView *viewTitle = [[UIView alloc] init];
+    // 设置时间title
+    UILabel *title1 = [[UILabel alloc] init];
+    title1.text = [CDDateHelper date:date toStringByFormat:@"yyyy年MM月dd日"];
+    title1.textAlignment = NSTextAlignmentCenter;
+    title1.font = UIFONT_BOLD_16;
+    title1.textColor = NavigationBarTitleColor;
+    [viewTitle addSubview:title1];
+    [title1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(viewTitle);
+        make.right.equalTo(viewTitle);
+        make.top.equalTo(viewTitle).offset(10.0);
+        make.bottom.equalTo(viewTitle.mas_centerY);
+    }];
+    
+    
+    UILabel *title2 = [[UILabel alloc] init];
+    title2.text = [CDDateHelper date:date toStringByFormat:@"hh:mm"];
+    title2.textAlignment = NSTextAlignmentCenter;
+    title2.font = UIFONT_12;
+    title2.textColor = COLOR_TITLE1;
+    [viewTitle addSubview:title2];
+    [title2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(viewTitle);
+        make.right.equalTo(viewTitle);
+        make.top.equalTo(title1.mas_bottom);
+        make.bottom.equalTo(viewTitle);
+    }];
+    
+    viewTitle.cd_size = CGSizeMake(SCREEN_WIDTH - 160, 44.0);
+    self.navigationItem.titleView = viewTitle;
+}
+
+
+#pragma mark - IBAction Method
+- (void)navigationButtonPressEvent:(UIButton *)button
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
@@ -162,12 +222,26 @@
             make.top.equalTo(self.view);
             make.left.equalTo(self.view).offset(5.0);
             make.right.equalTo(self.view).offset(-5.0);
-            make.bottom.equalTo(self.view);
+            make.bottom.equalTo(self.menuView.mas_top);
         }];
         
     }
     return _collectionViewAdd;
 }
 
+- (CDAddAttachmentMenuView *)menuView
+{
+    if (_menuView == nil) {
+        _menuView = [[CDAddAttachmentMenuView alloc] init];
+        [self.view addSubview:_menuView];
+        [_menuView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.view);
+            make.right.equalTo(self.view);
+            make.bottom.equalTo(self.view);
+            make.height.equalTo(@(AddAttachmentMenuHeight));
+        }];
+    }
+    return _menuView;
+}
 
 @end
