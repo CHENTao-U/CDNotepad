@@ -1,5 +1,5 @@
 //
-//  CDInputCollectionCell.h
+//  CDVoiceCollectionCell.h
 //  CDNotepad
 //
 //  Created by Cindy on 2017/1/10.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CDInputCollectionCell : UICollectionViewCell
-
-- (void)setup;
+@interface CDVoiceCollectionCell : UICollectionViewCell
 
 @end

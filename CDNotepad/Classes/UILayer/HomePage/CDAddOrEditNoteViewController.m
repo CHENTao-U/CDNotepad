@@ -8,9 +8,10 @@
 
 #import "CDAddOrEditNoteViewController.h"
 #import "CDInputCollectionCell.h"
+#import "CDVoiceCollectionCell.h"
 #import "CDAddAttachmentMenuView.h"
 
-@interface CDAddOrEditNoteViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface CDAddOrEditNoteViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,CDKeyboardManagerDelegate>
 
 @property (nonatomic,strong) UIView *viewTitle;
 @property (nonatomic,strong) UICollectionView *collectionViewAdd;
@@ -23,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     // 设置title
     [self updateTitleViewByNewDate:[NSDate date]];
@@ -42,7 +44,15 @@
     self.collectionViewAdd.delegate = self;
     self.collectionViewAdd.dataSource = self;
     
-    
+    // 设置底部菜单点击事件回调
+    [self.menuView setActionEvent:@selector(menuButtonClickedEvent:) andTarget:self];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    // 设置键盘事件代理
+    [[CDKeyboardManager sharedKeyboard] setEventDelegate:self];
 }
 
 - (void)updateTitleViewByNewDate:(NSDate *)date
@@ -67,47 +77,112 @@
     });
 }
 
+- (void)menuButtonClickedEvent:(UIButton *)button
+{
+    switch (button.tag) {
+        case 1:
+        {
+            NSLog(@"选择图片");
+        }
+            break;
+        case 2:
+        {
+            NSLog(@"开始录音");
+        }
+            break;
+        case 3:
+        {
+            NSLog(@"选择日期");
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma mark
+- (void)keyboardWillShowEventByUserInfo:(NSDictionary *)userInfo
+{
+    NSValue *value = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect bounds = [value CGRectValue];
+    [self.menuView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view).offset(-bounds.size.height);
+    }];
+    [UIView animateWithDuration:[[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
+
+- (void)keyboardWillHiddenEventByUserInfo:(NSDictionary *)userInfo
+{
+    [self.menuView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view).offset(0);
+    }];
+    [UIView animateWithDuration:[[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
+
 
 #pragma mark -  Collection View Delegate
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.collectionViewAdd registerClass:[CDInputCollectionCell class] forCellWithReuseIdentifier:@"CDInputCollectionCell"];
-    CDInputCollectionCell * cell = (CDInputCollectionCell *)[self.collectionViewAdd dequeueReusableCellWithReuseIdentifier:@"CDInputCollectionCell" forIndexPath:indexPath];
-    
-//    ZCCommanLinerModel *LineModel = _arrayDataSource[indexPath.section][indexPath.row];
-//    
-//    [cell initWithMenuTitle:LineModel.productCaption?LineModel.productCaption:@""];
     
     
     switch ([indexPath section]) {
         case 0:
         {
             // 文字输入
+            [self.collectionViewAdd registerClass:[CDInputCollectionCell class] forCellWithReuseIdentifier:@"CDInputCollectionCell"];
+            CDInputCollectionCell * cell = (CDInputCollectionCell *)[self.collectionViewAdd dequeueReusableCellWithReuseIdentifier:@"CDInputCollectionCell" forIndexPath:indexPath];
+            
+            
+            [cell setup];
+            
             cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
+            return cell;
         }
             break;
         case 1:
         {
             // 语音
+            [self.collectionViewAdd registerClass:[CDVoiceCollectionCell class] forCellWithReuseIdentifier:@"CDVoiceCollectionCell"];
+            CDVoiceCollectionCell * cell = (CDVoiceCollectionCell *)[self.collectionViewAdd dequeueReusableCellWithReuseIdentifier:@"CDVoiceCollectionCell" forIndexPath:indexPath];
+            
+            
+//            [cell setup];
+            
             cell.backgroundColor = [UIColor yellowColor];
+            return cell;
         }
             break;
         case 2:
         {
             // 图片
+            [self.collectionViewAdd registerClass:[CDVoiceCollectionCell class] forCellWithReuseIdentifier:@"CDVoiceCollectionCell"];
+            CDVoiceCollectionCell * cell = (CDVoiceCollectionCell *)[self.collectionViewAdd dequeueReusableCellWithReuseIdentifier:@"CDVoiceCollectionCell" forIndexPath:indexPath];
+            
+            
+//            [cell setup];
+            
             cell.backgroundColor = [UIColor greenColor];
+            return cell;
         }
             break;
         default:
+            return nil;
             break;
     }
-    return cell;
-    
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [self.view endEditing:YES];
 }
 
 #pragma mark  Item Size
@@ -118,7 +193,7 @@
         case 0:
         {
             // 文字输入
-            size = CGSizeMake(collectionView.cd_width, 150.0);
+            size = CGSizeMake(collectionView.cd_width, 180.0);
         }
             break;
         case 1:

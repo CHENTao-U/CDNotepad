@@ -56,8 +56,8 @@
 {
     NSLog(@"键盘隐藏");
     _keyboardVisible = NO;
-    if (_eventDelegate && [_eventDelegate respondsToSelector:@selector(keyboardWillHiddenEventByUserInfo:)]) {
-        [_eventDelegate keyboardWillHiddenEventByUserInfo:[notify userInfo]];
+    if (_eventDelegate && [_eventDelegate respondsToSelector:@selector(keyboardDidHideEventByUserInfo:)]) {
+        [_eventDelegate keyboardDidHideEventByUserInfo:[notify userInfo]];
     }
 }
 

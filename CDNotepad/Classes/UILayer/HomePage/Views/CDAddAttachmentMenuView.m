@@ -54,6 +54,16 @@ const CGFloat AddAttachmentMenuHeight = 45.0;
     
 }
 
+#pragma mark - Public Method
+- (void)setActionEvent:(SEL)action andTarget:(id)target
+{
+    [self.buttonSelectedPicture addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    self.buttonSelectedPicture.tag = 1;
+    [self.buttonMakeVoice addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    self.buttonMakeVoice.tag = 2;
+    [self.buttonSelectedDate addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    self.buttonSelectedDate.tag = 3;
+}
 
 #pragma mark - Getter Method
 - (UIView *)viewMenu

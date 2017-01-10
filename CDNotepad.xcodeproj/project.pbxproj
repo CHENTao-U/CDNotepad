@@ -89,6 +89,7 @@
 		37FD64451E24B8FF00FE65E3 /* new_or_edit_navigation_item_finished_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37FD64431E24B8FF00FE65E3 /* new_or_edit_navigation_item_finished_icon@3x.png */; };
 		37FD64481E24BD0000FE65E3 /* CDTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FD64471E24BD0000FE65E3 /* CDTipsView.m */; };
 		37FD644B1E24BD9F00FE65E3 /* CDKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FD644A1E24BD9F00FE65E3 /* CDKeyboardManager.m */; };
+		37FD644E1E24C35700FE65E3 /* CDVoiceCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FD644D1E24C35700FE65E3 /* CDVoiceCollectionCell.m */; };
 		37FFFA491E232905006E35DD /* CDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FFFA481E232905006E35DD /* CDButton.m */; };
 /* End PBXBuildFile section */
 
@@ -215,6 +216,8 @@
 		37FD64471E24BD0000FE65E3 /* CDTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDTipsView.m; sourceTree = "<group>"; };
 		37FD64491E24BD9F00FE65E3 /* CDKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDKeyboardManager.h; sourceTree = "<group>"; };
 		37FD644A1E24BD9F00FE65E3 /* CDKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDKeyboardManager.m; sourceTree = "<group>"; };
+		37FD644C1E24C35700FE65E3 /* CDVoiceCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVoiceCollectionCell.h; sourceTree = "<group>"; };
+		37FD644D1E24C35700FE65E3 /* CDVoiceCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDVoiceCollectionCell.m; sourceTree = "<group>"; };
 		37FFFA471E232905006E35DD /* CDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDButton.h; sourceTree = "<group>"; };
 		37FFFA481E232905006E35DD /* CDButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -248,6 +251,8 @@
 				3713A6551E2374BC00E88A3F /* CDNoteItemCell.m */,
 				37FD64291E24799200FE65E3 /* CDInputCollectionCell.h */,
 				37FD642A1E24799200FE65E3 /* CDInputCollectionCell.m */,
+				37FD644C1E24C35700FE65E3 /* CDVoiceCollectionCell.h */,
+				37FD644D1E24C35700FE65E3 /* CDVoiceCollectionCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -649,6 +654,7 @@
 				3713A65C1E23887D00E88A3F /* CDNoteModel.m in Sources */,
 				37F0651C1E20E76700653D2E /* CDMineViewController.m in Sources */,
 				3713A66B1E2399A600E88A3F /* CDAddOrEditNoteViewController.m in Sources */,
+				37FD644E1E24C35700FE65E3 /* CDVoiceCollectionCell.m in Sources */,
 				37F065001E20E00600653D2E /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				37F064DE1E20DF7700653D2E /* CDBarItem.m in Sources */,
 				37F064F91E20E00600653D2E /* MASCompositeConstraint.m in Sources */,

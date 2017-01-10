@@ -13,4 +13,7 @@ UIKIT_EXTERN const CGFloat AddAttachmentMenuHeight;
 
 @interface CDAddAttachmentMenuView : UIView
 
+
+- (void)setActionEvent:(SEL)action andTarget:(id)target;
+
 @end
