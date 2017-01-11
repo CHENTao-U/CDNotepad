@@ -25,6 +25,9 @@
 		3713A6661E2390D300E88A3F /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3713A6651E2390D300E88A3F /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3713A6681E23953200E88A3F /* test_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 3713A6671E23953200E88A3F /* test_picture.png */; };
 		3713A66B1E2399A600E88A3F /* CDAddOrEditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3713A66A1E2399A600E88A3F /* CDAddOrEditNoteViewController.m */; };
+		3769BE9F1E25BD950077B7D8 /* new_or_edit_menu_item_time_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3769BE9E1E25BD950077B7D8 /* new_or_edit_menu_item_time_icon.png */; };
+		3769BEA21E25C0680077B7D8 /* CDLongPressMakeVoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3769BEA11E25C0680077B7D8 /* CDLongPressMakeVoice.m */; };
+		3769BEA61E25CE200077B7D8 /* XHSoundRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3769BEA51E25CE200077B7D8 /* XHSoundRecorder.m */; };
 		37F064B31E20D5BB00653D2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064B21E20D5BB00653D2E /* main.m */; };
 		37F064B61E20D5BB00653D2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F064B51E20D5BB00653D2E /* AppDelegate.m */; };
 		37F064BE1E20D5BB00653D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F064BD1E20D5BB00653D2E /* Assets.xcassets */; };
@@ -121,6 +124,11 @@
 		3713A6671E23953200E88A3F /* test_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_picture.png; sourceTree = "<group>"; };
 		3713A6691E2399A600E88A3F /* CDAddOrEditNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAddOrEditNoteViewController.h; sourceTree = "<group>"; };
 		3713A66A1E2399A600E88A3F /* CDAddOrEditNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAddOrEditNoteViewController.m; sourceTree = "<group>"; };
+		3769BE9E1E25BD950077B7D8 /* new_or_edit_menu_item_time_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_or_edit_menu_item_time_icon.png; sourceTree = "<group>"; };
+		3769BEA01E25C0680077B7D8 /* CDLongPressMakeVoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDLongPressMakeVoice.h; sourceTree = "<group>"; };
+		3769BEA11E25C0680077B7D8 /* CDLongPressMakeVoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDLongPressMakeVoice.m; sourceTree = "<group>"; };
+		3769BEA41E25CE200077B7D8 /* XHSoundRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSoundRecorder.h; sourceTree = "<group>"; };
+		3769BEA51E25CE200077B7D8 /* XHSoundRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSoundRecorder.m; sourceTree = "<group>"; };
 		37F064AE1E20D5BB00653D2E /* CDNotepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDNotepad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F064B21E20D5BB00653D2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37F064B41E20D5BB00653D2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -245,6 +253,8 @@
 				37FD642D1E247D8000FE65E3 /* CDAddAttachmentMenuView.m */,
 				37FD644F1E24CBCA00FE65E3 /* CDCDPickerDateView.h */,
 				37FD64501E24CBCA00FE65E3 /* CDCDPickerDateView.m */,
+				3769BEA01E25C0680077B7D8 /* CDLongPressMakeVoice.h */,
+				3769BEA11E25C0680077B7D8 /* CDLongPressMakeVoice.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,6 +270,15 @@
 				37FD644D1E24C35700FE65E3 /* CDVoiceCollectionCell.m */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		3769BEA31E25CE200077B7D8 /* SoundRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				3769BEA41E25CE200077B7D8 /* XHSoundRecorder.h */,
+				3769BEA51E25CE200077B7D8 /* XHSoundRecorder.m */,
+			);
+			path = SoundRecorder;
 			sourceTree = "<group>";
 		};
 		37F064A51E20D5BB00653D2E = {
@@ -324,6 +343,7 @@
 		37F064CA1E20DC1900653D2E /* LibraryLayer */ = {
 			isa = PBXGroup;
 			children = (
+				3769BEA31E25CE200077B7D8 /* SoundRecorder */,
 				37F064DF1E20E00600653D2E /* Masonry */,
 			);
 			path = LibraryLayer;
@@ -514,6 +534,7 @@
 		37FD642F1E248D8F00FE65E3 /* AddOrEdit */ = {
 			isa = PBXGroup;
 			children = (
+				3769BE9E1E25BD950077B7D8 /* new_or_edit_menu_item_time_icon.png */,
 				37FD64421E24B8FF00FE65E3 /* new_or_edit_navigation_item_finished_icon@2x.png */,
 				37FD64431E24B8FF00FE65E3 /* new_or_edit_navigation_item_finished_icon@3x.png */,
 				37FD643C1E248EBD00FE65E3 /* new_or_edit_menu_item_calendar_icon.png */,
@@ -615,6 +636,7 @@
 				37F065411E20E95800653D2E /* Icon-Small@2x.png in Resources */,
 				37F065121E20E67B00653D2E /* tab_bar_bottom_item_icon_home_0@3x.png in Resources */,
 				37F0653C1E20E95800653D2E /* Icon-76@3x.png in Resources */,
+				3769BE9F1E25BD950077B7D8 /* new_or_edit_menu_item_time_icon.png in Resources */,
 				37F0650B1E20E57A00653D2E /* tab_bar_bottom_item_icon_mine@2x.png in Resources */,
 				37F064BE1E20D5BB00653D2E /* Assets.xcassets in Resources */,
 				3713A6491E23493600E88A3F /* home_navigation_right_add_new_note_icon@3x.png in Resources */,
@@ -658,6 +680,7 @@
 				37F0654E1E20F50400653D2E /* UIView+Frame.m in Sources */,
 				37F064FD1E20E00600653D2E /* MASViewAttribute.m in Sources */,
 				3713A65C1E23887D00E88A3F /* CDNoteModel.m in Sources */,
+				3769BEA21E25C0680077B7D8 /* CDLongPressMakeVoice.m in Sources */,
 				37F0651C1E20E76700653D2E /* CDMineViewController.m in Sources */,
 				3713A66B1E2399A600E88A3F /* CDAddOrEditNoteViewController.m in Sources */,
 				37FD644E1E24C35700FE65E3 /* CDVoiceCollectionCell.m in Sources */,
@@ -677,6 +700,7 @@
 				37FD642E1E247D8000FE65E3 /* CDAddAttachmentMenuView.m in Sources */,
 				3713A6661E2390D300E88A3F /* JSONKit.m in Sources */,
 				37F064B31E20D5BB00653D2E /* main.m in Sources */,
+				3769BEA61E25CE200077B7D8 /* XHSoundRecorder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

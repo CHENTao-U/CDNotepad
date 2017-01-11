@@ -8,7 +8,8 @@
 
 #import "CDAddAttachmentMenuView.h"
 #import "CDCDPickerDateView.h"
-
+#import "CDLongPressMakeVoice.h"
+#import "XHSoundRecorder.h"
 
 const CGFloat AddAttachmentMenuHeight = 45.0;
 
@@ -18,6 +19,8 @@ const CGFloat AddAttachmentMenuHeight = 45.0;
     CDCDPickerDateView *_picker;
     NSString *_dateString;
     NSString *_timeString;
+    
+    CDLongPressMakeVoice *_makeVoiceView;
 }
 @property (nonatomic,strong) UIView *viewMenu;
 @property (nonatomic,strong) UIButton *buttonSelectedPicture;
@@ -104,9 +107,35 @@ const CGFloat AddAttachmentMenuHeight = 45.0;
         case 2:
         {
             NSLog(@"开始录音");
-            if ([_delegate respondsToSelector:@selector(menuView:buttonMakeVoiceClicked:)]) {
-                [_delegate menuView:self buttonMakeVoiceClicked:button];
+            if (self.cd_height > AddAttachmentMenuHeight) {
+                return;
             }
+            
+            [[XHSoundRecorder sharedSoundRecorder] startRecorder:^(NSString *filePath) {
+                NSLog(@"录音文件路径:%@",filePath);
+                NSLog(@"录音结束");
+                if ([_delegate respondsToSelector:@selector(menuView:makeVoiceFinishedOnFilePath:)]) {
+                    [_delegate menuView:self makeVoiceFinishedOnFilePath:filePath];
+                }
+                
+            }];
+            
+            
+            [self mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.height.equalTo(@(AddAttachmentMenuHeight + CDDatePickerViewHeight));
+            }];
+            
+            [_makeVoiceView removeFromSuperview];
+            _makeVoiceView = [[CDLongPressMakeVoice alloc] init];
+            [_makeVoiceView setOverActionEvent:@selector(buttonOverClickedEvent:) andTarget:self];
+            [self addSubview:_makeVoiceView];
+            [_makeVoiceView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.viewMenu.mas_bottom);
+                make.left.equalTo(self);
+                make.right.equalTo(self);
+                make.bottom.equalTo(self);
+            }];
+
         }
             break;
         default:
@@ -114,6 +143,7 @@ const CGFloat AddAttachmentMenuHeight = 45.0;
     }
 }
 
+#pragma mark  显示日期和时间的选择器
 - (void)showPickerDateView:(UIButton *)button
 {
     if (button.tag == 1) {
@@ -141,6 +171,7 @@ const CGFloat AddAttachmentMenuHeight = 45.0;
     [_picker showPickerViewOnTargetView:self];
 }
 
+#pragma mark 选中日期和时间
 - (void)buttonOnPickerClickedEvent:(UIButton *)button
 {
     [_picker hiddenPickerView];
@@ -160,6 +191,18 @@ const CGFloat AddAttachmentMenuHeight = 45.0;
             [_delegate menuView:self selectedDate:newDate];
         }
     }
+}
+
+#pragma mark - 结束录音
+- (void)buttonOverClickedEvent:(UIButton *)button
+{
+    NSLog(@"结束录音");
+    [[XHSoundRecorder sharedSoundRecorder] stopRecorder];
+    
+    [_makeVoiceView removeFromSuperview];
+    [self mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(AddAttachmentMenuHeight));
+    }];
 }
 
 #pragma mark - Getter Method
@@ -346,7 +389,7 @@ const CGFloat AddAttachmentMenuHeight = 45.0;
         // icon图标
         UIImageView *imageView = [[UIImageView alloc] init];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
-        imageView.image = [UIImage imageNamed:@"new_or_edit_menu_item_calendar_icon"];
+        imageView.image = [UIImage imageNamed:@"new_or_edit_menu_item_time_icon"];
         [_buttonSelectedTime addSubview:imageView];
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(label.mas_left);

@@ -104,9 +104,9 @@
     NSLog(@"选择图片");
 }
 
-- (void)menuView:(CDAddAttachmentMenuView *)menuView buttonMakeVoiceClicked:(UIButton *)button
+- (void)menuView:(CDAddAttachmentMenuView *)menuView makeVoiceFinishedOnFilePath:(NSString *)filePath
 {
-    NSLog(@"开始录音");
+    NSLog(@"录音结束，保存地址：%@",filePath);
 }
 
 - (void)menuView:(CDAddAttachmentMenuView *)menuView selectedDate:(NSDate *)selectedDate
